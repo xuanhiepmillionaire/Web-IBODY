@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duyệt lương chuyên gia</title>
+  <link rel="stylesheet" href="../../CSS/AD/dashboard.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <a href="admin-dashboard.html">Tổng quan</a>
+    <a href="admin-users.html">Tài khoản</a>
+    <a href="admin-duyet-chuyen-gia.html">Duyệt chuyên gia</a>
+    <a href="admin-reports.html">Tố cáo</a>
+    <a href="admin-lichhen.html">Lịch hẹn</a>
+    <a href="admin-danhgia.html">Đánh giá</a>
+    <a href="adminPhuongThuc.html">Phương thức</a>
+    <a href="admin-salary.html" class="active">Thanh toán lương</a>
+    <a href="admin-yeu-cau-chuyen-khoan.html">Yêu cầu chuyển khoản</a>
+    <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <h1>Danh sách yêu cầu nhận lương</h1>
+    <table id="salaryTable" class="admin-table">
+      <thead>
+        <tr>
+          <th>Chuyên Gia</th>
+          <th>Email</th>
+          <th>Số ca</th>
+          <th>Số tiền</th>
+          <th>Ngày tạo</th>
+          <th>Trạng thái</th>
+          <th>Số tài khoản</th>
+          <th>Ngân hàng</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS sẽ render -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="../../JS/Admin/admin-salary.js"></script>
+
+</body>
+</html>

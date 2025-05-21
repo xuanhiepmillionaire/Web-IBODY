@@ -1,0 +1,147 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fa;
+    height: 100%;
+  }
+  /* Go Back Button */
+.go-back-btn {
+    background: #ffffff;
+    color: #0d6efd;
+    border: 2px solid #0d6efd;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .go-back-btn::before {
+    content: \"\\2190\"; /* Unicode ký tự mũi tên ← */
+    font-size: 1.2rem;
+  }
+  
+  .go-back-btn:hover {
+    background: #0d6efd;
+    color: #ffffff;
+  }
+  
+  .settings-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+  }
+  
+  .settings-container h1,
+  .settings-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .settings-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .settings-section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #0d6efd;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  input[type="email"],
+  input[type="password"],
+  input[type="file"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9f9f9;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    background: #ffffff;
+  }
+  
+  .btn, .btn-danger {
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    border: none;
+  }
+  
+  .btn {
+    background: #0d6efd;
+    color: white;
+  }
+  
+  .btn:hover {
+    background: #0b5ed7;
+  }
+  
+  .btn-danger {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background: #c82333;
+  }
+  
+  .avatar-upload {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  #avatarPreview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .danger p {
+    color: #dc3545;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .settings-container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  }
+  

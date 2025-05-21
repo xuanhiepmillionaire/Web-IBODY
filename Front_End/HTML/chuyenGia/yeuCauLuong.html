@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Yêu cầu nhận lương</title>
+  <link rel="stylesheet" href="../../CSS/chuyenGia/yeuCauLuong.css">
+  <link rel="stylesheet" href="../../CSS/chuyenGia/TongHopChuyenGia.css">
+</head>
+<body>
+
+ <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <button id="toggleSidebarBtn" title="Ẩn/Hiện menu">☰</button>
+      <span class="topbar-title">IBODY – Thấu hiểu thân thể bạn</span>
+    </div>
+    <button id="toggleThemeBtn" title="Đổi giao diện">🌙</button>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar expanded" id="sidebar">
+    <a href="indexChuyenGia.html"> Trang chủ</a>
+    <a href="TongHopChuyenGia.html"> Quản lý thống kê</a>
+    <a href="appointments-expert.html"> Lịch hẹn</a>
+    <a href="clients-expert.html"> Khách hàng</a>
+    <a href="tin-nhan.html"> Tin nhắn</a>
+    <a href="profile.html"> Hồ sơ cá nhân</a>
+    <a href="yeuCauLuong.html" class="active"> Yêu cầu nhận lương</a>
+    <a href="lichSuLuong.html"> Lịch sử nhận lương</a>
+    <a href="#" onclick="logout()"> Đăng xuất</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main-content expanded" id="mainContent">
+    <h1>💰 Yêu cầu nhận lương</h1>
+
+    <!-- THÔNG TIN CHUYÊN GIA -->
+    <div class="section">
+      <h3>👤 Thông tin tài khoản</h3>
+      <p><strong>Họ tên:</strong> <span id="expertName"></span></p>
+      <p><strong>Email:</strong> <span id="expertEmail"></span></p>
+      <p><strong>Số tài khoản:</strong> <span id="bankAccount"></span></p>
+      <p><strong>Ngân hàng:</strong> <span id="bankName"></span></p>
+    </div>
+
+    <!-- TỔNG KẾT LƯƠNG -->
+    <div class="section">
+      <h3>📊 Thống kê</h3>
+      <p><strong>Tổng số ca hoàn tất:</strong> <span id="totalCa">0</span></p>
+      <p><strong>Tiền mỗi ca:</strong> <span id="donGia">0</span> VNĐ</p>
+      <p><strong>Tổng tiền:</strong> <span id="tongTien">0</span> VNĐ</p>
+      <button id="guiYeuCauBtn" class="submit-btn">📩 Gửi yêu cầu nhận lương</button>
+    </div>
+
+    <!-- CHI TIẾT CA -->
+    <div class="section">
+      <h3>📅 Chi tiết ca đã hoàn tất</h3>
+      <ul id="listChiTietCa" style="list-style: disc; padding-left: 24px;"></ul>
+    </div>
+
+    <!-- LỊCH SỬ YÊU CẦU -->
+    <div class="section">
+      <h3>🕒 Lịch sử yêu cầu nhận lương</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="background: #3498db; color: white;">
+            <th style="padding: 10px;">Ngày tạo</th>
+            <th>Số ca</th>
+            <th>Số tiền</th>
+            <th>Trạng thái</th>
+          </tr>
+        </thead>
+        <tbody id="lichSuLuongBody"></tbody>
+      </table>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" style="margin-top:40px;">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>Về chúng tôi</h3>
+          <p>IBODY là dự án kết nối học sinh với các chuyên gia tâm lý đáng tin cậy...</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Liên hệ</h4>
+          <p>Email: duytruongk22@gmail.com</p>
+          <p>Hotline: 0889 225 315</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ibody. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../JS/chuyenGia/yeuCauLuong.js"></script>
+</body>
+</html>

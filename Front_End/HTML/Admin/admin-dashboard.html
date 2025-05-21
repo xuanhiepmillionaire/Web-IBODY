@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../../CSS/AD/dashboard.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <a href="admin-dashboard.html" class="active">Tổng quan</a>
+      <a href="admin-users.html">Tài khoản</a>
+      <a href="admin-duyet-chuyen-gia.html">Duyệt chuyên gia</a>
+      <a href="admin-reports.html">Tố cáo</a>
+      <a href="admin-lichhen.html">Lịch hẹn</a>
+      <a href="admin-danhgia.html">Đánh giá</a>
+      <a href="adminPhuongThuc.html" >Phương thức</a>
+      <a href="admin-salary.html">Thanh toán lương</a>
+      <a href="admin-yeu-cau-chuyen-khoan.html">Yêu cầu chuyển khoản</a>
+      <a href="./admin-tinnhan.html">tin nhắn</a>
+      <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <h1>Quản trị hệ thống</h1>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <h3>Tổng người dùng</h3>
+        <p id="countUsers">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Tổng chuyên gia</h3>
+        <p id="countExperts">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Yêu cầu nâng cấp</h3>
+        <p id="countUpgrade">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Lịch hẹn</h3>
+        <p id="countAppointments">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>Tố cáo</h3>
+        <p id="countReports">0</p>
+      </div>
+    </div>
+
+  <script src="../../JS/Admin/admin-dashboard.js"></script>
+</body>
+</html>

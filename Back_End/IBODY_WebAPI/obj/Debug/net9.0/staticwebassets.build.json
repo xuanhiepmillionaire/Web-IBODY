@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "GYDxks71ZZydVQdQSG4MFIVoGtc96YELrCHIxHZFcZM=",
+  "Source": "IBODY_WebAPI",
+  "BasePath": "_content/IBODY_WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

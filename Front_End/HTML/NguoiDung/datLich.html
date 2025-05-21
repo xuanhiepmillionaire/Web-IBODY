@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt lịch tư vấn</title>
+  <link rel="stylesheet" href="../../CSS/NguoiDung/datLich.css">
+  <link rel="stylesheet" href="../../CSS/index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <span class="symbol">♂♀</span>
+      <span class="brand">ibody</span>
+    </div>
+    
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+  
+      <nav class="nav">
+      <a href="../Index.html" class="active">Trang chủ</a>
+      <a href="https://www.facebook.com/groups/1717452315821331">Cộng Đồng</a>
+      <a href="search-expert.html">Tư vấn</a>
+      <a href="tin-nhan-user.html">Nhắn tin</a>
+      <a href="lich-hen-user.html">Lịch hẹn</a>
+      <a href="lichSuGoi.html">Lịch sử giao dịch</a>
+      <a href="dang-ky-goi.html">Gói tư vấn</a>
+
+
+      <a href="#" id="loginLink" onclick="openAuthModal()">Đăng nhập/Đăng ký</a>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <div class="user-button" onclick="toggleUserDropdown()">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="avatar">
+          <span id="usernameDisplay"></span>
+        </div>
+        <div class="user-dropdown" id="userDropdown">
+          <a href="../profile.html">Trang cá nhân</a>
+          <a href="settings-upgrade.html">Nâng cấp thành chuyên gia</a>
+          <a href="../../HTML/tracnghiem.html">Trắc nghiệm trầm cảm</a>
+          <a href="ho-tro-user.html">Hỗ trợ</a>
+          <a href="#" onclick="logout()">Đăng xuất</a>
+        </div>
+      </div>
+      
+    </nav>
+
+  </header>
+
+<div class="container py-4">
+  <!-- THÔNG TIN NGƯỜI DÙNG & CHUYÊN GIA -->
+  <div class="row mb-4">
+    <!-- Người dùng -->
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          Thông tin người dùng
+        </div>
+        <div class="card-body">
+          <p><strong>Họ tên:</strong> <input class="form-control" id="fullName" disabled></p>
+          <p><strong>Email:</strong> <input class="form-control" id="email" disabled></p>
+          <p><strong>SĐT:</strong> <input class="form-control" id="phone" disabled></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chuyên gia -->
+    <div class="col-md-6">
+      <div class="card shadow-sm">
+        <div class="card-header bg-success text-white">
+          Thông tin chuyên gia
+        </div>
+        <div class="card-body">
+          <p id="expertName"></p>
+          <p id="expertChuyenMon"></p>
+          <p id="expertDanhGia"></p>
+          <p id="expertGioiThieu"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM ĐẶT LỊCH -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-info text-white">
+      Đặt lịch tư vấn
+    </div>
+    <div class="card-body">
+      <form id="bookingForm">
+        <div class="mb-3">
+          <label for="ngay" class="form-label">Chọn ngày:</label>
+          <input type="date" id="ngay" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Chọn khung giờ trống:</label>
+          <div id="slotContainer" class="d-flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="mb-3">
+          <label for="hinhThucId" class="form-label">Hình thức tư vấn:</label>
+          <select id="hinhThucId" class="form-select" required></select>
+        </div>
+
+        <div class="mb-3">
+          <label for="soCa" class="form-label">Số ca liên tiếp:</label>
+          <select id="soCa" class="form-select">
+            <option value="1">1 ca</option>
+            <option value="2">2 ca</option>
+            <option value="3">3 ca</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="notes" class="form-label">Tóm tắt nội dung tư vấn:</label>
+          <textarea id="notes" class="form-control" rows="3" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+          📅 Đặt lịch tư vấn
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="custom-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-about">
+          <h4>Về chúng tôi</h4>
+          <p>
+            IBODY là dự án kết nối học sinh với chuyên gia tâm lý, giúp các em
+            hiểu và phát triển bản thân một cách lành mạnh.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h4>Liên hệ</h4>
+          <p>Email: duytruongk22@gmail.com</p>
+          <p>Email: xuanhiep.ht4f@gmail.com</p>
+          <p>Email: baotram.hutech@gmail.com</p>
+          <p>Hotline: 0889 225 315</p>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 IBODY. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="../../JS/NguoiDung/datLich.js"></script>
+</body>
+</html>

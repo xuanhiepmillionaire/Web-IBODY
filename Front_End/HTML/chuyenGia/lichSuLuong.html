@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Lịch sử nhận lương</title>
+  <link rel="stylesheet" href="../../CSS/chuyenGia/lichSuLuong.css">
+  <link rel="stylesheet" href="../../CSS/chuyenGia/TongHopChuyenGia.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-left">
+      <button id="toggleSidebarBtn" title="Ẩn/Hiện menu">☰</button>
+      <span class="topbar-title">IBODY – Thấu hiểu thân thể bạn</span>
+    </div>
+    <button id="toggleThemeBtn" title="Đổi giao diện">🌙</button>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar expanded" id="sidebar">
+    <a href="indexChuyenGia.html"> Trang chủ</a>
+    <a href="TongHopChuyenGia.html"> Quản lý thống kê</a>
+    <a href="appointments-expert.html"> Lịch hẹn</a>
+    <a href="clients-expert.html"> Khách hàng</a>
+    <a href="tin-nhan.html"> Tin nhắn</a>
+    <a href="profile.html" class="active"> Hồ sơ cá nhân</a>
+    <a href="yeuCauLuong.html"> Yêu cầu nhận lương</a>
+    <a href="lichSuLuong.html" class="active"> Lịch sử nhận lương</a>
+    <a href="#" onclick="logout()"> Đăng xuất</a>
+  </div>
+
+  <div class="container">
+    <h2>Lịch sử nhận lương</h2>
+    <div class="summary" id="summaryBox">
+      <p><strong>Tổng ca hoàn tất:</strong> <span id="tongCa">0</span></p>
+      <p><strong>Đơn giá mỗi ca:</strong> <span id="donGia">0</span>₫</p>
+      <p><strong>Tổng tiền có thể nhận:</strong> <span id="tongTien">0</span>₫</p>
+      <button class="btn" id="guiYeuCauBtn">Gửi yêu cầu nhận lương</button>
+      <p id="thongBaoYeuCau" style="color: green; margin-top: 10px;"></p>
+    </div>
+
+    <h3>Lịch sử các lần nhận lương</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Ngày gửi</th>
+          <th>Số ca</th>
+          <th>Số tiền</th>
+          <th>Trạng thái</th>
+        </tr>
+      </thead>
+      <tbody id="lichSuTable">
+        <tr><td colspan="4">Đang tải dữ liệu...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="../../JS/chuyenGia/lichSuLuong.js"></script>
+</body>
+</html>

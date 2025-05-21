@@ -1,0 +1,150 @@
+.profile-expert-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.expert-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 20px;
+}
+
+.expert-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.expert-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00bfa6;
+}
+
+.expert-details h1 {
+  margin: 0;
+  font-size: 1.6em;
+  color: #333;
+}
+
+.expert-details p {
+  margin: 4px 0;
+  color: #666;
+}
+
+.expert-actions .btn {
+  margin-left: 10px;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0 15px;
+}
+
+.tab-button {
+  flex: 1;
+  background-color: #f0f0f0;
+  border: none;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  background-color: #00bfa6;
+  color: white;
+  font-weight: 600;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-content h3 {
+  color: #00bfa6;
+  margin-top: 0;
+}
+
+.review-form {
+  margin-top: 20px;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal-content .close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+.star-rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.star-rating .star {
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.star-rating .star.hover,
+.star-rating .star.selected {
+  color: gold;
+}

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý tài khoản</title>
+  <link rel="stylesheet" href="../../CSS/AD/dashboard.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <a href="admin-dashboard.html">Tổng quan</a>
+    <a href="admin-users.html" class="active">Tài khoản</a>
+    <a href="admin-duyet-chuyen-gia.html">Duyệt chuyên gia</a>
+    <a href="admin-reports.html">Tố cáo</a>
+    <a href="admin-lichhen.html">Lịch hẹn</a>
+    <a href="admin-danhgia.html">Đánh giá</a>
+    <a href="adminPhuongThuc.html">Phương thức</a>
+    <a href="admin-salary.html">Thanh toán lương</a>
+    <a href="admin-yeu-cau-chuyen-khoan.html">Yêu cầu chuyển khoản</a>
+    <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <h1>Quản lý tài khoản</h1>
+
+    <div class="section">
+      <h3>Danh sách tài khoản</h3>
+      <div style="overflow-x:auto;">
+        <table class="admin-table" style="width:100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background-color:#007bff; color:white;">
+              <th style="padding: 10px;">ID</th>
+              <th style="padding: 10px;">Email</th>
+              <th style="padding: 10px;">Vai trò</th>
+              <th style="padding: 10px;">Trạng thái</th>
+              <th style="padding: 10px;">Họ tên</th>
+              <th style="padding: 10px;">Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody">
+            <!-- Dữ liệu tài khoản sẽ được render tại đây -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../JS/Admin/admin-users.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+}
+
+.goi-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  margin-top: 40px;
+  color: #333;
+}
+
+#goiHienTai {
+  padding: 20px;
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.goi-hientai p {
+  margin: 6px 0;
+}
+
+.goi-hientai button {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.goi-hientai button:hover {
+  background-color: #2e7d32;
+}
+
+.goi-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.goi-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: calc(50% - 10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.goi-item h4 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.goi-item p {
+  margin: 6px 0;
+}
+
+.goi-item button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.goi-item button:hover {
+  background-color: #0056b3;
+}

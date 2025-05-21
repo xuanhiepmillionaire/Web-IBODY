@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Back_End", "Back_End", "{D2043AFF-54BF-C2E6-1270-7443933C929B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBODY_WebAPI", "Back_End\IBODY_WebAPI\IBODY_WebAPI.csproj", "{41BE80D8-1FC6-0E32-9962-07AA86BCD0B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41BE80D8-1FC6-0E32-9962-07AA86BCD0B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41BE80D8-1FC6-0E32-9962-07AA86BCD0B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41BE80D8-1FC6-0E32-9962-07AA86BCD0B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41BE80D8-1FC6-0E32-9962-07AA86BCD0B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{41BE80D8-1FC6-0E32-9962-07AA86BCD0B4} = {D2043AFF-54BF-C2E6-1270-7443933C929B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {227CB985-D20B-4842-B40F-BF49477FE389}
+	EndGlobalSection
+EndGlobal

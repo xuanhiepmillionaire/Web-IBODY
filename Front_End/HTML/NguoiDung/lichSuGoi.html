@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Lịch sử gói đã đăng ký</title>
+  <link rel="stylesheet" href="../../CSS/NguoiDung/lichSuGoi.css">
+  <link rel="stylesheet" href="../../CSS/index.css">
+  <style>
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border: 1px solid #ccc; text-align: center; }
+    th { background-color: #f0f0f0; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <span class="symbol">♂♀</span>
+      <span class="brand">ibody</span>
+    </div>
+    
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+  
+      <nav class="nav">
+      <a href="../Index.html" class="active">Trang chủ</a>
+      <a href="https://www.facebook.com/groups/1717452315821331">Cộng Đồng</a>
+      <a href="search-expert.html">Tư vấn</a>
+      <a href="tin-nhan-user.html">Nhắn tin</a>
+      <a href="lich-hen-user.html">Lịch hẹn</a>
+      <a href="lichSuGoi.html">Lịch sử giao dịch</a>
+      <a href="dang-ky-goi.html">Gói tư vấn</a>
+
+
+      <a href="#" id="loginLink" onclick="openAuthModal()">Đăng nhập/Đăng ký</a>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <div class="user-button" onclick="toggleUserDropdown()">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="avatar">
+          <span id="usernameDisplay"></span>
+        </div>
+        <div class="user-dropdown" id="userDropdown">
+          <a href="../profile.html">Trang cá nhân</a>
+          <a href="settings-upgrade.html">Nâng cấp thành chuyên gia</a>
+          <a href="../../HTML/tracnghiem.html">Trắc nghiệm trầm cảm</a>
+          <a href="ho-tro-user.html">Hỗ trợ</a>
+          <a href="#" onclick="logout()">Đăng xuất</a>
+        </div>
+      </div>
+      
+    </nav>
+
+  </header>
+  <div class="container">
+    <h2>Lịch sử các gói đã đăng ký</h2>
+    <table id="historyTable">
+      <thead>
+        <tr>
+          <th>Tên gói</th>
+          <th>Giá</th>
+          <th>Ngày bắt đầu</th>
+          <th>Ngày kết thúc</th>
+          <th>Số lượt</th>
+          <th>Còn lại</th>
+          <th>Trạng thái</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script src="../../JS/NguoiDung/lichSuGoi.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+body {
+      background: linear-gradient(120deg, #fdfbfb, #ebedee);
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .lich-hen-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.6s ease;
+    }
+
+    .card.lich-hen-card {
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .card.lich-hen-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .lich-hen-section {
+      margin-top: 40px;
+    }
+
+    .lich-hen-section h2 {
+      color: #0d6efd;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #dee2e6;
+      padding-bottom: 5px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }

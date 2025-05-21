@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý Đánh giá</title>
+  <link rel="stylesheet" href="../../CSS/AD/dashboard.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <a href="admin-dashboard.html">Tổng quan</a>
+    <a href="admin-users.html">Tài khoản</a>
+    <a href="admin-duyet-chuyen-gia.html">Duyệt chuyên gia</a>
+    <a href="admin-reports.html">Tố cáo</a>
+    <a href="admin-lichhen.html">Lịch hẹn</a>
+    <a href="admin-danhgia.html" class="active">Đánh giá</a>
+
+    <a href="adminPhuongThuc.html">Phương thức</a>
+    <a href="admin-salary.html">Thanh toán lương</a>
+    <a href="admin-yeu-cau-chuyen-khoan.html">Yêu cầu chuyển khoản</a>
+    <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <h1>Danh sách đánh giá</h1>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Người dùng</th>
+          <th>Email</th>
+          <th>Chuyên gia</th>
+          <th>Email</th>
+          <th>Điểm số</th>
+          <th>Nhận xét</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="danhGiaTableBody">
+        <!-- dữ liệu đánh giá sẽ được load tại đây -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="../../JS/Admin/admin-danhgia.js"></script>
+
+</body>
+</html>

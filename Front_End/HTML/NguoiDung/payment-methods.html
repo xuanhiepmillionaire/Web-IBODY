@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phương thức Thanh Toán</title>
+    <link rel="stylesheet" href="../../CSS/NguoiDung/payment-methods.css">
+    <link rel="stylesheet" href="../../CSS/index.css">
+</head>
+<body>
+    <header class="header">
+    <div class="logo">
+      <span class="symbol">♂♀</span>
+      <span class="brand">ibody</span>
+    </div>
+    
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+  
+      <nav class="nav">
+      <a href="../Index.html" class="active">Trang chủ</a>
+      <a href="https://www.facebook.com/groups/1717452315821331">Cộng Đồng</a>
+      <a href="search-expert.html">Tư vấn</a>
+      <a href="tin-nhan-user.html">Nhắn tin</a>
+      <a href="lich-hen-user.html">Lịch hẹn</a>
+      <a href="lichSuGoi.html">Lịch sử giao dịch</a>
+      <a href="dang-ky-goi.html">Gói tư vấn</a>
+
+
+      <a href="#" id="loginLink" onclick="openAuthModal()">Đăng nhập/Đăng ký</a>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <div class="user-button" onclick="toggleUserDropdown()">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="avatar">
+          <span id="usernameDisplay"></span>
+        </div>
+        <div class="user-dropdown" id="userDropdown">
+          <a href="../profile.html">Trang cá nhân</a>
+          <a href="settings-upgrade.html">Nâng cấp thành chuyên gia</a>
+          <a href="../../HTML/tracnghiem.html">Trắc nghiệm trầm cảm</a>
+          <a href="ho-tro-user.html">Hỗ trợ</a>
+          <a href="#" onclick="logout()">Đăng xuất</a>
+        </div>
+      </div>
+      
+    </nav>
+
+  </header>
+ <div class="container">
+    <h2>Thông tin thanh toán gói dịch vụ</h2>
+
+    <div class="info-card">
+      <h3>Thông tin gói</h3>
+      <p><strong>Tên gói:</strong> <span id="goiTen"></span></p>
+      <p><strong>Giá:</strong> <span id="goiGia"></span></p>
+      <p><strong>Thời hạn:</strong> <span id="goiThoiHan"></span></p>
+      <p><strong>Số lượt:</strong> <span id="goiSoLuot"></span></p>
+    </div>
+
+    <div class="info-card">
+      <h3>Chuyển khoản tới tài khoản hệ thống</h3>
+      <p>Vui lòng quét mã QR dưới đây để chuyển khoản đúng số tiền:</p>
+      <img src="../../ThanhToan.png" alt="QR Code" class="qr-code">
+      <p><strong>Nội dung chuyển khoản:</strong> <code id="chuyenKhoanGhiChu">user_xxx_goi_xxx</code></p>
+      <p><em>Lưu ý: bạn chỉ được kích hoạt gói sau khi admin xác nhận thanh toán.</em></p>
+    </div>
+
+    <button class="pay-btn">Tôi đã chuyển khoản</button>
+  </div>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Về chúng tôi</h3>
+                <p>
+                    IBODY là một dự án nhằm kết nối học sinh với các chuyên gia tâm lý đáng tin cậy, hỗ trợ tư vấn những vấn đề tâm lý, sinh lý và tình dục mà các em còn ngần ngại chia sẻ với phụ huynh.
+                    Chúng tôi mang đến không gian an toàn, thông tin chính xác và sự đồng hành chuyên nghiệp để giúp học sinh thấu hiểu bản thân, vượt qua lo lắng và phát triển một cách lành mạnh.
+                </p>
+            </div>
+            <div class="footer-contact">
+                <h4>Liên hệ</h4>
+                <p>Email: duytruongk22@gmail.com</p>
+                <p>Hotline: 0889 225 315</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ibody. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../JS/NguoiDung/payment-methods.js"></script>
+</body>
+</html>

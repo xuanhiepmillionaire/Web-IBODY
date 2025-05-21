@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trắc nghiệm tâm lý - DASS</title>
+  <link rel="stylesheet" href="../CSS/tracnghiem.css" />
+  <link rel="stylesheet" href="../CSS/index.css" />
+</head>
+<body>
+<header class="header">
+    <div class="logo">
+      <span class="symbol">♂♀</span>
+      <span class="brand">ibody</span>
+    </div>
+    
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+  
+      <nav class="nav">
+      <a href="Index.html" class="active">Trang chủ</a>
+      <a href="https://www.facebook.com/groups/1717452315821331">Cộng Đồng</a>
+      <a href="../HTML/NguoiDung/search-expert.html">Tư vấn</a>
+      <a href="../HTML/NguoiDung/tin-nhan-user.html">Nhắn tin</a>
+      <a href="../HTML/NguoiDung/lich-hen-user.html">Lịch hẹn</a>
+      <a href="../HTML/NguoiDung/lichSuGoi.html">Lịch sử giao dịch</a>
+      <a href="../HTML/NguoiDung/dang-ky-goi.html">Gói tư vấn</a>
+
+
+      <!-- hết test  -->
+      <a href="#" id="loginLink" onclick="openAuthModal()">Đăng nhập/Đăng ký</a>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <div class="user-button" onclick="toggleUserDropdown()">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="avatar">
+          <span id="usernameDisplay"></span>
+        </div>
+        <div class="user-dropdown" id="userDropdown">
+          <a href="profile.html">Trang cá nhân</a>
+          <a href="../HTML/NguoiDung/settings-upgrade.html">Nâng cấp thành chuyên gia</a>
+          <a href="../HTML/tracnghiem.html">Trắc nghiệm trầm cảm</a>
+          <a href="../HTML/NguoiDung/ho-tro-user.html">Hỗ trợ</a>
+          <a href="#" onclick="logout()">Đăng xuất</a>
+        </div>
+      </div>
+      
+    </nav>
+
+  </header>
+
+  <div class="container">
+    <h2>Bài trắc nghiệm tâm lý DASS – 40 câu</h2>
+    <form id="dassForm"></form>
+    <button type="submit" class="submit-btn" form="dassForm">Gửi kết quả</button>
+    <div id="result" class="result-box"></div>
+  </div>
+  <script src="../JS/dass-questions.js"></script>
+  <script src="../JS/tracnghiem.js"></script>
+</body>
+</html>

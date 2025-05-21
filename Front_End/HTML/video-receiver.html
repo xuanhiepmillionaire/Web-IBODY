@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Nhận Cuộc Gọi (Receiver)</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+  <style>
+    #videoContainer {
+      display: none;
+      margin-top: 20px;
+    }
+    video {
+      width: 45%;
+      margin: 5px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Chờ nhận cuộc gọi từ khách hàng...</h2>
+  <div id="videoContainer">
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+  </div>
+
+  <script src="../JS/video-receiver.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xác nhận lịch hẹn - Chuyên gia</title>
+  <link rel="stylesheet" href="../../CSS/chuyenGia/TongHopChuyenGia.css">
+  <link rel="stylesheet" href="../../CSS/chuyenGia/appointments-expert.css">
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <button id="toggleSidebarBtn" title="Ẩn/Hiện menu">☰</button>
+      <span class="topbar-title">IBODY – Thấu hiểu thân thể bạn</span>
+    </div>
+    <button id="toggleThemeBtn" title="Đổi giao diện">🌙</button>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar expanded" id="sidebar">
+    <a href="indexChuyenGia.html"> Trang chủ</a>
+    <a href="TongHopChuyenGia.html"> Quản lý thống kê</a>
+    <a href="appointments-expert.html" class="active"> Lịch hẹn</a>
+    <a href="clients-expert.html"> Khách hàng</a>
+    <a href="tin-nhan.html"> Tin nhắn</a>
+    <a href="profile.html"> Hồ sơ cá nhân</a>
+    <a href="yeuCauLuong.html"> Yêu cầu nhận lương</a>
+    <a href="lichSuLuong.html"> Lịch sử nhận lương</a>
+    <a href="#" onclick="logout()"> Đăng xuất</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main-content expanded" id="mainContent">
+    <h1>Quản lý lịch tư vấn</h1>
+
+    <div class="section">
+      <h2>🔵 Lịch đang diễn ra</h2>
+      <div id="lichDangDienRa"><p>Đang tải...</p></div>
+    </div>
+
+    <div class="section">
+      <h2>🟡 Lịch chờ duyệt</h2>
+      <div id="lichChoDuyet"><p>Đang tải...</p></div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>Về chúng tôi</h3>
+          <p>IBODY là dự án kết nối học sinh với chuyên gia tâm lý đáng tin cậy...</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Liên hệ</h4>
+          <p>Email: duytruongk22@gmail.com</p>
+          <p>Hotline: 0889 225 315</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ibody. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+<script src="../../JS/chuyenGia/appointments-expert.js"></script>
+</body>
+</html>

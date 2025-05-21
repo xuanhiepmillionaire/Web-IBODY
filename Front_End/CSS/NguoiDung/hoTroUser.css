@@ -1,0 +1,96 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8fafc;
+  margin: 0;
+  padding: 0;
+}
+
+.support-container {
+  max-width: 600px;
+  margin: 60px auto;
+  background-color: #ffffff;
+  padding: 30px 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.go-back-btn {
+  background-color: #e2e8f0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.go-back-btn:hover {
+  background-color: #cbd5e1;
+}
+
+.support-container h1 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.description {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+#supportForm .form-group {
+  margin-bottom: 20px;
+}
+
+#supportForm label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #334155;
+}
+
+#supportForm input,
+#supportForm textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #f9fafb;
+  color: #0f172a;
+}
+
+#supportForm input:focus,
+#supportForm textarea:focus {
+  border-color: #4f46e5;
+  outline: none;
+  background-color: #fff;
+}
+
+.btn-submit {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #4338ca;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .support-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}

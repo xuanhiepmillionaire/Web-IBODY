@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Hồ sơ cá nhân</title>
+  <link rel="stylesheet" href="../CSS/index.css">
+  <link rel="stylesheet" href="../CSS/profile.css">
+</head>
+<body>
+
+
+  <header class="header">
+    <div class="logo">
+      <span class="symbol">♂♀</span>
+      <span class="brand">ibody</span>
+    </div>
+    
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+  
+      <nav class="nav">
+      <a href="Index.html" class="active">Trang chủ</a>
+      <a href="https://www.facebook.com/groups/1717452315821331">Cộng Đồng</a>
+      <a href="../HTML/NguoiDung/search-expert.html">Tư vấn</a>
+      <a href="../HTML/NguoiDung/tin-nhan-user.html">Nhắn tin</a>
+      <a href="../HTML/NguoiDung/lich-hen-user.html">Lịch hẹn</a>
+      <a href="../HTML/NguoiDung/lichSuGoi.html">Lịch sử giao dịch</a>
+      <a href="../HTML/NguoiDung/dang-ky-goi.html">Gói tư vấn</a>
+
+
+      <!-- hết test  -->
+      <a href="#" id="loginLink" onclick="openAuthModal()">Đăng nhập/Đăng ký</a>
+      <div class="user-menu" id="userMenu" style="display: none;">
+        <div class="user-button" onclick="toggleUserDropdown()">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Avatar" class="avatar">
+          <span id="usernameDisplay"></span>
+        </div>
+        <div class="user-dropdown" id="userDropdown">
+          <a href="profile.html">Trang cá nhân</a>
+          <a href="../HTML/NguoiDung/settings-upgrade.html">Nâng cấp thành chuyên gia</a>
+          <a href="../HTML/tracnghiem.html">Trắc nghiệm trầm cảm</a>
+          <a href="../HTML/NguoiDung/ho-tro-user.html">Hỗ trợ</a>
+          <a href="#" onclick="logout()">Đăng xuất</a>
+        </div>
+      </div>
+      
+    </nav>
+
+  </header>
+<div class="profile-container">
+    <div class="tab-buttons">
+      <button class="tab-btn active" data-tab="view">Thông tin tài khoản</button>
+      <button class="tab-btn" data-tab="info">Thay đổi thông tin</button>
+      <button class="tab-btn" data-tab="history">Lịch sử tư vấn</button>
+    </div>
+
+    <div class="tab-content" id="view-tab">
+      <div class="current-info-box">
+        <img id="currentAvatar" src="" alt="Avatar" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem;">
+        <p><strong>Họ tên:</strong> <span id="infoHoTen"></span></p>
+        <p><strong>Email:</strong> <span id="infoEmail"></span></p>
+        <p><strong>Giới tính:</strong> <span id="infoGioiTinh"></span></p>
+        <p><strong>Ngày sinh:</strong> <span id="infoNgaySinh"></span></p>
+        <p><strong>Mục tiêu tâm lý:</strong> <span id="infoMucTieu"></span></p>
+      </div>
+    </div>
+
+    <div class="tab-content hidden" id="info-tab">
+
+ <form id="avatarUploadForm" enctype="multipart/form-data">
+    <label>Chọn ảnh đại diện:
+      <input type="file" id="avatarFile" accept="image/*" required>
+    </label>
+    <button type="submit">Tải lên avatar</button>
+  </form>
+
+  <!-- ✅ Form cập nhật thông tin -->
+  <form id="updateInfoForm">
+    <label>Họ tên: <input type="text" id="hoTen" required></label>
+    <label>Ngày sinh: <input type="date" id="ngaySinh"></label>
+    <label>Giới tính:
+      <select id="gioiTinh">
+        <option value="">-- Chọn --</option>
+        <option value="nam">Nam</option>
+        <option value="nu">Nữ</option>
+        <option value="khac">Khác</option>
+      </select>
+    </label>
+    <label>Mục tiêu tâm lý: <textarea id="mucTieuTamLy" rows="3"></textarea></label>
+    <button type="submit">Lưu thay đổi</button>
+  </form>
+    </div>
+
+    <div class="tab-content hidden" id="history-tab">
+      <div id="lichSuTuVanList">Đang tải lịch sử...</div>
+    </div>
+  </div>
+
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Về chúng tôi</h3>
+        <p>
+            IBODY là một dự án nhằm kết nối học sinh với các chuyên gia tâm lý đáng tin cậy, hỗ trợ tư vấn những vấn đề tâm lý, sinh lý và tình dục mà các em còn ngần ngại chia sẻ với phụ huynh.
+            Chúng tôi mang đến không gian an toàn, thông tin chính xác và sự đồng hành chuyên nghiệp để giúp học sinh thấu hiểu bản thân, vượt qua lo lắng và phát triển một cách lành mạnh.
+        </p>
+      </div>
+      <div class="footer-contact">
+        <h4>Liên hệ</h4>
+        <p>Email: duytruongk22@gmail.com</p>
+        <p>Hotline: 0889 225 315</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ibody. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- <script src="../JS/index.js"></script> -->
+  <script src="../JS/profile.js"></script>
+</body>
+</html>

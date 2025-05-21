@@ -1,0 +1,146 @@
+
+/* Body chung */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f4f7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container hồ sơ */
+.profile-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Nút chuyển tab */
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #d0d0d0;
+}
+
+.tab-btn.active {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* Nội dung tab */
+.tab-content {
+  display: block;
+}
+
+.tab-content.hidden {
+  display: none;
+}
+
+/* Hiển thị thông tin người dùng */
+.current-info-box {
+  text-align: left;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Avatar hiển thị */
+#currentAvatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Form upload avatar */
+#avatarUploadForm {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-left: 4px solid #007BFF;
+  border-radius: 8px;
+}
+
+#avatarUploadForm label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+#avatarUploadForm input[type="file"] {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+#avatarUploadForm button {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#avatarUploadForm button:hover {
+  background-color: #0056b3;
+}
+
+/* Form chỉnh sửa */
+form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}

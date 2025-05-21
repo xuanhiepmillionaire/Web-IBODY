@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết nhận lương</title>
+  <link rel="stylesheet" href="../../CSS/chuyenGia/salary-details.css">
+</head>
+<body>
+  <div class="container" id="invoice">
+    <h2>Chi tiết hóa đơn nhận lương</h2>
+    <div class="info-row"><strong>Số ca:</strong> <span id="soCa"></span></div>
+    <div class="info-row"><strong>Đơn giá/ca:</strong> <span id="donGia"></span></div>
+    <div class="info-row"><strong>Tổng tiền:</strong> <span id="tongTien"></span></div>
+    <div class="info-row"><strong>Ngày tạo:</strong> <span id="ngayTao"></span></div>
+    <div class="info-row"><strong>Trạng thái:</strong> <span id="trangThai"></span></div>
+
+    <button class="btn-print" onclick="window.print()">🖨️ In hóa đơn</button>
+  </div>
+
+  <script src="../../JS/chuyenGia/salary-details.js"></script>
+</body>
+</html>

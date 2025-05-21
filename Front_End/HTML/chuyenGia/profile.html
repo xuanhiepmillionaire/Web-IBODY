@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hồ sơ chuyên gia</title>
+  <link rel="stylesheet" href="../../CSS/chuyenGia/profile.css">
+  <link rel="stylesheet" href="../../CSS/chuyenGia/TongHopChuyenGia.css">
+</head>
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <button id="toggleSidebarBtn" title="Ẩn/Hiện menu">☰</button>
+      <span class="topbar-title">IBODY – Thấu hiểu thân thể bạn</span>
+    </div>
+    <button id="toggleThemeBtn" title="Đổi giao diện">🌙</button>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar expanded" id="sidebar">
+    <a href="indexChuyenGia.html"> Trang chủ</a>
+    <a href="TongHopChuyenGia.html"> Quản lý thống kê</a>
+    <a href="appointments-expert.html"> Lịch hẹn</a>
+    <a href="clients-expert.html"> Khách hàng</a>
+    <a href="tin-nhan.html"> Tin nhắn</a>
+    <a href="profile.html" class="active"> Hồ sơ cá nhân</a>
+    <a href="yeuCauLuong.html"> Yêu cầu nhận lương</a>
+    <a href="lichSuLuong.html"> Lịch sử nhận lương</a>
+    <a href="#" onclick="logout()"> Đăng xuất</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main-content expanded" id="mainContent">
+    <h1>👤 Hồ sơ chuyên gia</h1>
+
+    <div class="section">
+      <!-- Tabs -->
+      <div class="tab-buttons" style="display:flex; gap:10px; margin-bottom:20px;">
+        <button class="tab-btn active" data-tab="info">Thông tin hiện tại</button>
+        <button class="tab-btn" data-tab="edit">Chỉnh sửa thông tin</button>
+        <button class="tab-btn" data-tab="schedule">Thời gian rảnh</button>
+      </div>
+
+      <!-- Thông tin chuyên gia -->
+      <div class="tab-content active" id="info">
+        <h3>Thông tin chuyên gia</h3>
+        <img id="currentAvatar" src="" alt="avatar" class="avatar">
+        <p><strong>Họ tên:</strong> <span id="cgFullName"></span></p>
+        <p><strong>Email:</strong> <span id="cgEmail"></span></p>
+        <p><strong>Chuyên môn:</strong> <span id="cgSpecialty"></span></p>
+        <p><strong>Số năm kinh nghiệm:</strong> <span id="cgExperience"></span></p>
+        <p><strong>Số chứng chỉ:</strong> <span id="cgCertificates"></span></p>
+        <p><strong>Giới thiệu:</strong> <span id="cgIntro"></span></p>
+        <p><strong>Số tài khoản:</strong> <span id="cgSoTaiKhoan"></span></p>
+        <p><strong>Tên ngân hàng:</strong> <span id="cgTenNganHang"></span></p>
+      </div>
+
+      <!-- Cập nhật thông tin -->
+      <div class="tab-content" id="edit">
+        <h3>Cập nhật thông tin</h3>
+        <form id="editForm" style="display:flex; flex-direction:column; gap:12px;">
+          <label for="avatarInput">Ảnh đại diện:</label>
+          <input type="file" id="avatarInput" accept="image/*">
+          <input type="text" id="editFullName" placeholder="Họ tên" required>
+          <input type="text" id="editSpecialty" placeholder="Chuyên môn" required>
+          <input type="number" id="editExperience" placeholder="Số năm kinh nghiệm" required>
+          <input type="text" id="editCertificates" placeholder="Số chứng chỉ" required>
+          <textarea id="editIntro" placeholder="Giới thiệu bản thân" required></textarea>
+          <input type="text" id="editSoTaiKhoan" placeholder="Số tài khoản ngân hàng">
+          <input type="text" id="editTenNganHang" placeholder="Tên ngân hàng">
+          <button type="submit">💾 Lưu thay đổi</button>
+        </form>
+        <div id="editResult"></div>
+      </div>
+
+      <!-- Thời gian rảnh -->
+      <div class="tab-content" id="schedule">
+        <h3>Thời gian rảnh</h3>
+        <table id="scheduleTable">
+          <thead>
+            <tr><th>Thứ</th><th>Từ</th><th>Đến</th><th>Hành động</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <h4>Thêm / Sửa thời gian rảnh</h4>
+        <form id="scheduleForm" style="display:flex; flex-wrap:wrap; gap:10px;">
+          <input type="hidden" id="scheduleId">
+          <select id="thuTrongTuan" required>
+            <option value="">-- Chọn thứ --</option>
+            <option value="0">Chủ nhật</option>
+            <option value="1">Thứ 2</option>
+            <option value="2">Thứ 3</option>
+            <option value="3">Thứ 4</option>
+            <option value="4">Thứ 5</option>
+            <option value="5">Thứ 6</option>
+            <option value="6">Thứ 7</option>
+          </select>
+          <input type="time" id="tu" required>
+          <input type="time" id="den" required>
+          <button type="submit">✅ Lưu</button>
+          <button type="button" onclick="resetScheduleForm()">❌ Huỷ</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" style="margin-top:40px;">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>Về chúng tôi</h3>
+          <p>IBODY là một dự án nhằm kết nối học sinh với các chuyên gia tâm lý đáng tin cậy...</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Liên hệ</h4>
+          <p>Email: duytruongk22@gmail.com</p>
+          <p>Hotline: 0889 225 315</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ibody. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../../JS/chuyenGia/proflie.js"></script>
+</body>
+</html>

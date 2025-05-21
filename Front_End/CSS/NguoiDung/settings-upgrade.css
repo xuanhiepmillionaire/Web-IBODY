@@ -1,0 +1,46 @@
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.expert-upgrade-form .form-group {
+  margin-bottom: 15px;
+}
+
+.expert-upgrade-form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.expert-upgrade-form input,
+.expert-upgrade-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.response-message {
+  margin-top: 15px;
+  font-weight: 600;
+}

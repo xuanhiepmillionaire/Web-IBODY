@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duyệt Chuyên Gia</title>
+  <link rel="stylesheet" href="../../CSS/AD/dashboard.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <a href="admin-dashboard.html">Tổng quan</a>
+    <a href="admin-users.html">Tài khoản</a>
+    <a href="admin-duyet-chuyen-gia.html" class="active">Duyệt chuyên gia</a>
+    <a href="admin-reports.html">Tố cáo</a>
+    <a href="admin-lichhen.html">Lịch hẹn</a>
+    <a href="admin-danhgia.html">Đánh giá</a>
+  
+    <a href="adminPhuongThuc.html">Phương thức</a>
+    <a href="admin-salary.html">Thanh toán lương</a>
+    <a href="admin-yeu-cau-chuyen-khoan.html">Yêu cầu chuyển khoản</a>
+    <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <h1>Danh sách yêu cầu nâng cấp thành chuyên gia</h1>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Họ tên</th>
+          <th>Chuyên môn</th>
+          <th>Kinh nghiệm</th>
+          <th>Chứng chỉ</th>
+          <th>Giới thiệu</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="expertRequestTableBody">
+        <!-- Dữ liệu sẽ được tải vào -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="../../JS/Admin/admin-duyet-chuyen-gia.js"></script>
+  <script>
+    document.getElementById("logoutLink")?.addEventListener("click", () => {
+      localStorage.removeItem("user");
+      window.location.href = "../index.html";
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duyệt yêu cầu chuyển khoản</title>
+  <link rel="stylesheet" href="../../CSS/AD/dashboard.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Dashboard</h2>
+    <a href="admin-dashboard.html">Tổng quan</a>
+    <a href="admin-users.html">Tài khoản</a>
+    <a href="admin-duyet-chuyen-gia.html">Duyệt chuyên gia</a>
+    <a href="admin-reports.html">Tố cáo</a>
+    <a href="admin-lichhen.html">Lịch hẹn</a>
+    <a href="admin-danhgia.html">Đánh giá</a>
+    <a href="adminPhuongThuc.html">Phương thức</a>
+    <a href="admin-salary.html">Thanh toán lương</a>
+    <a href="admin-yeu-cau-chuyen-khoan.html" class="active">Yêu cầu chuyển khoản</a>
+    <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <h1>Danh sách yêu cầu xác nhận chuyển khoản</h1>
+    <table id="yeuCauTable" class="admin-table">
+      <thead>
+        <tr>
+          <th>Họ tên</th>
+          <th>Email</th>
+          <th>Gói</th>
+          <th>Mã chuyển khoản</th>
+          <th>Ngày tạo</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Render dữ liệu tại đây -->
+      </tbody>
+    </table>
+
+    <h2>Lịch sử chuyển khoản</h2>
+    <table id="lichSuTable" class="admin-table">
+      <thead>
+        <tr>
+          <th>Họ tên</th>
+          <th>Email</th>
+          <th>Gói</th>
+          <th>Mã chuyển khoản</th>
+          <th>Ngày tạo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Render dữ liệu lịch sử chuyển khoản tại đây -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="../../JS/Admin/admin-yeu-cau-chuyen-khoan.js"></script>
+
+</body>
+</html>
