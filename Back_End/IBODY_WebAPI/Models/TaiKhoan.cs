@@ -9,7 +9,7 @@ public partial class TaiKhoan
 
     public string Email { get; set; } = null!;
 
-    public string MatKhau { get; set; } = null!;
+    public string? MatKhau { get; set; }
 
     public string? VaiTro { get; set; }
 

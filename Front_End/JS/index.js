@@ -3,18 +3,27 @@ window.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const googleUserParam = urlParams.get("googleUser");
 
-  if (user.roles && user.roles.includes("chuyen_gia")) {
-    window.location.href = "../HTML/chuyengia/indexChuyenGia.html";
-    return;
-  }
   if (googleUserParam) {
     try {
       const userData = JSON.parse(decodeURIComponent(googleUserParam));
-      localStorage.setItem("user", JSON.stringify(userData));
 
-      // Chuyển trang tương ứng
-      if (userData.roles.includes("chuyen_gia")) {
+      // ✅ Chuẩn hóa để frontend tương thích (vai trò dạng mảng như roles = [...])
+      const mappedUser = {
+        taiKhoanId: userData.userId,
+        email: userData.email,
+        fullName: userData.fullName || userData.email,
+        roles: [userData.role], // Gán thành mảng
+        avatarUrl: null,
+        trangThai: "hoat_dong"
+      };
+
+      localStorage.setItem("user", JSON.stringify(mappedUser));
+
+      // ✅ Chuyển trang tùy vai trò
+      if (mappedUser.roles.includes("chuyen_gia")) {
         window.location.href = "../HTML/chuyenGia/indexChuyenGia.html";
+      } else if (mappedUser.roles.includes("quan_tri")) {
+        window.location.href = "../HTML/Admin/admin-dashboard.html";
       } else {
         window.location.href = "index.html";
       }
@@ -23,6 +32,18 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // ✅ Nếu người dùng đã đăng nhập từ trước
+  if (user) {
+    const loginLink = document.getElementById("loginLink");
+    const userMenu = document.getElementById("userMenu");
+    const usernameDisplay = document.getElementById("usernameDisplay");
+
+    if (loginLink && userMenu && usernameDisplay) {
+      loginLink.style.display = "none";
+      userMenu.style.display = "inline-block";
+      usernameDisplay.innerText = user.fullName || user.email;
+    }
+  }
 });
 
 

@@ -193,20 +193,14 @@ builder.Services.AddSession(options =>
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
 })
 .AddCookie()
-.AddGoogle("Google", options =>
+.AddGoogle(options =>
 {
     options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
     options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
     options.CallbackPath = "/api/auth/google/callback";
-
-    options.Scope.Add("profile");
-    options.Scope.Add("email");
-
-    options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "sub");
-    options.ClaimActions.MapJsonKey(ClaimTypes.Name, "name");
-    options.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
 });
 
 // CORS configuration — customize origins as needed

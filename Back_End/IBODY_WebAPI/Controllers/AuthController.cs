@@ -5,6 +5,9 @@ using IBODY_WebAPI.Models;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Net;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace IBODY_WebAPI.Controllers
 {
@@ -253,109 +256,82 @@ namespace IBODY_WebAPI.Controllers
         [HttpGet("google-login")]
         public IActionResult GoogleLogin()
         {
-            var redirectUrl = Url.Action("GoogleResponse", "Auth");
-            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Google", redirectUrl);
-            return Challenge(properties, "Google");
+            var props = new AuthenticationProperties
+            {
+                RedirectUri = "/api/auth/google-callback"
+            };
+            return Challenge(props, GoogleDefaults.AuthenticationScheme);
         }
 
-        [HttpGet("google/callback")]
-        public async Task<IActionResult> GoogleResponse()
+        [HttpGet("google-callback")]
+public async Task<IActionResult> GoogleCallback()
+{
+    // ✅ Lấy kết quả xác thực từ Google
+    var result = await HttpContext.AuthenticateAsync(GoogleDefaults.AuthenticationScheme);
+
+    if (!result.Succeeded)
+    {
+        var errorMsg = result.Failure?.Message ?? "Google login failed";
+        return BadRequest(errorMsg);
+    }
+
+    // ✅ Trích xuất thông tin từ claim
+    var claims = result.Principal?.Identities?.FirstOrDefault()?.Claims;
+    var email = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+    var fullName = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+
+    if (string.IsNullOrWhiteSpace(email))
+        return BadRequest("Không nhận được email từ Google.");
+
+    // ✅ Kiểm tra tài khoản trong bảng 'tai_khoan'
+    var existingAccount = await _context.TaiKhoans.FirstOrDefaultAsync(tk => tk.Email == email);
+
+    if (existingAccount == null)
+    {
+        // ✅ Nếu chưa tồn tại → tạo mới tài khoản
+        var newAccount = new TaiKhoan
         {
-            try
-            {
-                var info = await _signInManager.GetExternalLoginInfoAsync();
-                if (info == null)
-                {
-                    Console.WriteLine("❌ Không nhận được thông tin từ Google.");
-                    return Redirect("http://localhost:5500/index.html?error=login_failed");
-                }
+            Email = email,
+            MatKhau = null, // không cần mật khẩu
+            VaiTro = "nguoi_dung",
+            TrangThai = "hoat_dong"
+        };
 
-                var signInResult = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false);
-                ApplicationUser user;
+        _context.TaiKhoans.Add(newAccount);
+        await _context.SaveChangesAsync();
+        existingAccount = newAccount;
 
-                if (!signInResult.Succeeded)
-                {
-                    var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-                    user = await _userManager.FindByEmailAsync(email);
-                    if (user == null)
-                    {
-                        user = new ApplicationUser
-                        {
-                            UserName = email,
-                            Email = email,
-                            FullName = info.Principal.FindFirstValue(ClaimTypes.Name)
-                        };
+        // ✅ Có thể thêm vào bảng 'nguoi_dung' nếu bạn dùng
+        var newNguoiDung = new NguoiDung
+        {
+            TaiKhoanId = newAccount.Id,
+            HoTen = fullName ?? "Người dùng Google",
+            NgaySinh = null,
+            GioiTinh = null,
+            MucTieuTamLy = null,
+            AvatarUrl = null
+        };
 
-                        var createResult = await _userManager.CreateAsync(user);
-                        if (!createResult.Succeeded)
-                        {
-                            Console.WriteLine("❌ Lỗi tạo ApplicationUser: " + string.Join(", ", createResult.Errors.Select(e => e.Description)));
-                            return Redirect("http://localhost:5500/index.html?error=create_user_failed");
-                        }
+        _context.NguoiDungs.Add(newNguoiDung);
+        await _context.SaveChangesAsync();
+    }
 
-                        await _userManager.AddLoginAsync(user, info);
-                        await _userManager.AddToRoleAsync(user, "nguoi_dung");
+    // ✅ Tạo JSON chứa thông tin người dùng để gửi về FE
+    var googleUserJson = JsonSerializer.Serialize(new
+    {
+        userId = existingAccount.Id,
+        email = existingAccount.Email,
+        role = existingAccount.VaiTro,
+        fullName = fullName ?? existingAccount.Email
+    });
 
-                        // 🔁 Tạo tài khoản trong bảng `tai_khoan`
-                        var taiKhoan = new TaiKhoan
-                        {
-                            Email = user.Email,
-                            MatKhau = "google_login",
-                            VaiTro = "nguoi_dung",
-                            TrangThai = "hoat_dong"
-                        };
-                        _context.TaiKhoans.Add(taiKhoan);
-                        await _context.SaveChangesAsync();
+    // ✅ Redirect về frontend + đính kèm thông tin
+    // CHỈ sửa dòng này trong callback:
+var redirectUrl = $"http://127.0.0.1:5500/Front_End/HTML/Index.html?googleUser={Uri.EscapeDataString(googleUserJson)}";
 
-                        // 🔁 Tạo bản ghi người dùng
-                        var nguoiDung = new NguoiDung
-                        {
-                            TaiKhoanId = taiKhoan.Id,
-                            HoTen = user.FullName,
-                            GioiTinh = null,
-                            NgaySinh = null,
-                            MucTieuTamLy = null
-                        };
-                        _context.NguoiDungs.Add(nguoiDung);
-                        await _context.SaveChangesAsync();
-                    }
-                }
-                else
-                {
-                    user = await _userManager.FindByLoginAsync(info.LoginProvider, info.ProviderKey);
-                }
+    return Redirect(redirectUrl);
+}
 
-                // 🔍 Lấy lại bản ghi tài khoản đồng bộ
-                var tkSync = await _context.TaiKhoans.FirstOrDefaultAsync(x => x.Email == user.Email);
-                if (tkSync == null)
-                {
-                    Console.WriteLine("❌ Không tìm thấy tài khoản đồng bộ.");
-                    return Redirect("http://localhost:5500/index.html?error=account_not_found");
-                }
-
-                var roles = await _userManager.GetRolesAsync(user);
-                var nguoiDungSync = await _context.NguoiDungs.FirstOrDefaultAsync(x => x.TaiKhoanId == tkSync.Id);
-
-                var userData = new
-                {
-                    taiKhoanId = tkSync.Id,
-                    email = user.Email,
-                    fullName = user.FullName,
-                    roles = roles,
-                    trangThai = tkSync.TrangThai,
-                    avatarUrl = nguoiDungSync?.AvatarUrl
-                };
-
-                var json = JsonSerializer.Serialize(userData);
-                var base64 = WebUtility.UrlEncode(json);
-                return Redirect($"http://localhost:5500/index.html?googleUser={base64}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("❌ LỖI callback Google:\n" + ex.ToString());
-                return Redirect("http://localhost:5500/index.html?error=server_error");
-            }
-        }
 
 
 

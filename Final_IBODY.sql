@@ -238,7 +238,8 @@ ADD NgayTao DATETIME DEFAULT GETDATE();
 
 use Final_IBODY
 
-
+ALTER TABLE tai_khoan
+ALTER COLUMN mat_khau VARCHAR(255) NULL;
 
 
 
