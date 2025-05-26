@@ -139,9 +139,11 @@ async function sendMessage() {
         noiDung
       })
     });
-
-    if (!res.ok) throw new Error("Không gửi được tin nhắn");
-
+    if (!res.ok) {
+      const errData = await res.json();
+      alert("❌ " + (errData.message || "Không gửi được tin nhắn."));
+      return;
+    }
     input.value = "";
     document.getElementById("typing-text").style.visibility = "hidden";
     loadMessages(currentUserId, selectedUserId);

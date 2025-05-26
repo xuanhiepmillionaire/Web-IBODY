@@ -165,6 +165,9 @@ public partial class FinalIbodyContext : DbContext
             entity.ToTable("chuyen_gia");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.AnhChungChi)
+                .HasMaxLength(255)
+                .HasColumnName("anh_chung_chi");
             entity.Property(e => e.AvatarUrl)
                 .HasMaxLength(255)
                 .HasColumnName("avatar_url");

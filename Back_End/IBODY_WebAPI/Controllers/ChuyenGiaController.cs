@@ -37,7 +37,6 @@ namespace IBODY_WebAPI.Controllers
             cg.SoTaiKhoan = dto.SoTaiKhoan;
             cg.TenNganHang = dto.TenNganHang;
 
-
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Cập nhật hồ sơ chuyên gia thành công." });
@@ -70,6 +69,31 @@ namespace IBODY_WebAPI.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Đã cập nhật avatar", avatarUrl = cg.AvatarUrl });
+        }
+
+
+        [HttpPost("upload-chung-chi/{accountId}")]
+        public async Task<IActionResult> UploadChungChi(int accountId, IFormFile file)
+        {
+            var cg = await _context.ChuyenGia.FirstOrDefaultAsync(c => c.TaiKhoanId == accountId);
+            if (cg == null) return NotFound("Không tìm thấy chuyên gia.");
+
+            if (file == null || file.Length == 0)
+                return BadRequest("Vui lòng chọn file.");
+
+            var folder = Path.Combine(Directory.GetCurrentDirectory(), "img");
+            Directory.CreateDirectory(folder);
+
+            var fileName = $"chungchi_{accountId}_{DateTime.Now.Ticks}{Path.GetExtension(file.FileName)}";
+            var path = Path.Combine(folder, fileName);
+
+            using var stream = new FileStream(path, FileMode.Create);
+            await file.CopyToAsync(stream);
+
+            cg.AnhChungChi = $"/img/{fileName}";
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Đã tải ảnh chứng chỉ", url = cg.AnhChungChi });
         }
 
 
@@ -210,6 +234,7 @@ namespace IBODY_WebAPI.Controllers
                 chuyenMon = chuyenGia.ChuyenMon,
                 gioiThieu = chuyenGia.GioiThieu,
                 soChungChi = chuyenGia.SoChungChi,
+                anhChungChi = chuyenGia.AnhChungChi,
                 avatarUrl = chuyenGia.AvatarUrl,
                 soTaiKhoan = chuyenGia.SoTaiKhoan,
                 tenNganHang = chuyenGia.TenNganHang
@@ -336,7 +361,7 @@ namespace IBODY_WebAPI.Controllers
     }
 
 
-   public class CapNhatChuyenGiaDto
+public class CapNhatChuyenGiaDto
 {
     public string HoTen { get; set; } = null!;
     public int SoNamKinhNghiem { get; set; }
@@ -346,6 +371,7 @@ namespace IBODY_WebAPI.Controllers
     public string? SoTaiKhoan { get; set; }
     public string? TenNganHang { get; set; }
 }
+
 
 
     public class DoiMatKhauDto

@@ -27,6 +27,8 @@ public partial class ChuyenGium
 
     public string? TenNganHang { get; set; }
 
+    public string? AnhChungChi { get; set; }
+
     public virtual ICollection<DanhGium> DanhGia { get; set; } = new List<DanhGium>();
 
     public virtual ICollection<HocVanChuyenGium> HocVanChuyenGia { get; set; } = new List<HocVanChuyenGium>();

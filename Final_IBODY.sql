@@ -236,15 +236,16 @@ ALTER TABLE lich_hen
 ADD NgayTao DATETIME DEFAULT GETDATE();
 
 
-use Final_IBODY
+
 
 ALTER TABLE tai_khoan
 ALTER COLUMN mat_khau VARCHAR(255) NULL;
 
+ALTER TABLE chuyen_gia ADD anh_chung_chi NVARCHAR(255);
 
 
 
-
+use Final_IBODY
 
 
 EXEC sp_help 'giao_dich';

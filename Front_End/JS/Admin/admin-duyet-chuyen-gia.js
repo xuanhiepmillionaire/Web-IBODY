@@ -22,6 +22,10 @@ async function loadExpertRequests() {
         <td>${expert.chuyenMon}</td>
         <td>${expert.soNamKinhNghiem}</td>
         <td>${expert.soChungChi}</td>
+        
+          <img src="http://localhost:5221${expert.anhChungChi || '/images/no-image.png'}" 
+          alt="chứng chỉ" style="max-width: 200px; margin-top:5px; border:1px solid #ccc;">
+        </td>
         <td>${expert.gioiThieu}</td>
         <td>
           <button onclick="duyetChuyenGia(${expert.id})">Duyệt</button>

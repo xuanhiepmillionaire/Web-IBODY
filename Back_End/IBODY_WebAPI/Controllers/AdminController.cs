@@ -106,6 +106,7 @@ namespace IBODY_WebAPI.Controllers
             cg.HoTen,
             cg.SoNamKinhNghiem,
             cg.SoChungChi,
+            cg.AnhChungChi,
             cg.ChuyenMon,
             cg.GioiThieu,
             cg.TrangThai

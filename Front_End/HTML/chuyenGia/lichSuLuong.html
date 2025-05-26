@@ -5,6 +5,7 @@
   <title>Lịch sử nhận lương</title>
   <link rel="stylesheet" href="../../CSS/chuyenGia/lichSuLuong.css">
   <link rel="stylesheet" href="../../CSS/chuyenGia/TongHopChuyenGia.css">
+  <link rel="stylesheet" href="../../CSS/index.css">
 </head>
 <body>
   <div class="topbar">
@@ -22,30 +23,32 @@
     <a href="appointments-expert.html"> Lịch hẹn</a>
     <a href="clients-expert.html"> Khách hàng</a>
     <a href="tin-nhan.html"> Tin nhắn</a>
-    <a href="profile.html" class="active"> Hồ sơ cá nhân</a>
+    <a href="profile.html"> Hồ sơ cá nhân</a>
     <a href="yeuCauLuong.html"> Yêu cầu nhận lương</a>
     <a href="lichSuLuong.html" class="active"> Lịch sử nhận lương</a>
     <a href="#" onclick="logout()"> Đăng xuất</a>
   </div>
-
-  <div class="container">
+<div class="main-content expanded" id="mainContent">
+  <div class="salary-summary card">
     <h2>Lịch sử nhận lương</h2>
-    <div class="summary" id="summaryBox">
-      <p><strong>Tổng ca hoàn tất:</strong> <span id="tongCa">0</span></p>
-      <p><strong>Đơn giá mỗi ca:</strong> <span id="donGia">0</span>₫</p>
-      <p><strong>Tổng tiền có thể nhận:</strong> <span id="tongTien">0</span>₫</p>
-      <button class="btn" id="guiYeuCauBtn">Gửi yêu cầu nhận lương</button>
-      <p id="thongBaoYeuCau" style="color: green; margin-top: 10px;"></p>
+    <div class="summary-grid">
+      <div><strong>Tổng ca hoàn tất:</strong> <span id="tongCa">0</span></div>
+      <div><strong>Đơn giá mỗi ca:</strong> <span id="donGia">0</span>₫</div>
+      <div><strong>Tổng tiền có thể nhận:</strong> <span id="tongTien">0</span>₫</div>
     </div>
+    <button class="btn-primary" id="guiYeuCauBtn">📤 Gửi yêu cầu nhận lương</button>
+    <p id="thongBaoYeuCau" class="notice-success"></p>
+  </div>
 
+  <div class="card">
     <h3>Lịch sử các lần nhận lương</h3>
-    <table>
+    <table class="styled-table">
       <thead>
         <tr>
-          <th>Ngày gửi</th>
-          <th>Số ca</th>
-          <th>Số tiền</th>
-          <th>Trạng thái</th>
+          <th>📅 Ngày gửi</th>
+          <th>📋 Số ca</th>
+          <th>💰 Số tiền</th>
+          <th>⏳ Trạng thái</th>
         </tr>
       </thead>
       <tbody id="lichSuTable">
@@ -54,6 +57,28 @@
     </table>
   </div>
 
+
+
+<!-- FOOTER -->
+    <footer class="footer" style="margin-top:40px;">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>Về chúng tôi</h3>
+          <p>IBODY là dự án kết nối học sinh với chuyên gia tâm lý, giúp các em hiểu và phát triển bản thân một cách lành mạnh.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Liên hệ</h4>
+          <p>Email: duytruongk22@gmail.com</p>
+          <p>Email: xuanhiep.ht4f@gmail.com</p>
+          <p>Email: baotram.hutech@gmail.com</p>
+          <p>Hotline: 0889 225 315</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 ibody. All rights reserved.</p>
+      </div>
+    </footer>
+</div>
   <script src="../../JS/chuyenGia/lichSuLuong.js"></script>
 </body>
 </html>

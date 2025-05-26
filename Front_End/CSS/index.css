@@ -627,6 +627,30 @@ img {
   color: white;
 }
 
+
+.google-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+.google-login-btn:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -824,17 +848,26 @@ img {
 
 /* Footer */
 .custom-footer {
-  background-color: var(--text-darker);
-  color: var(--white);
-  padding: 3rem 1.5rem;
+  background-color: #1F2937;
+  color: #E5E7EB;
+  padding: 3rem 1.5rem 2rem;
   margin-top: 3rem;
+  margin-left: 220px;
+  transition: margin-left 0.3s ease;
 }
+
+.sidebar.collapsed ~ .custom-footer {
+  margin-left: 0;
+}
+
 
 .footer-columns {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .footer-about,
@@ -844,17 +877,23 @@ img {
 
 .footer-about h4,
 .footer-contact h4 {
-  color: var(--primary-color);
+  color: #A78BFA; /* tím nhẹ */
   margin-bottom: 1rem;
+}
+
+.footer-about p,
+.footer-contact p {
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .footer-bottom {
   margin-top: 2rem;
   text-align: center;
-  border-top: 1px solid #444;
+  border-top: 1px solid #374151;
   padding-top: 1rem;
-  font-size: 0.9rem;
-  color: #ccc;
+  font-size: 0.85rem;
+  color: #9CA3AF; /* xám nhẹ hơn */
 }
 
 

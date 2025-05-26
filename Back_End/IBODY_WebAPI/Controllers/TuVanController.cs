@@ -114,6 +114,8 @@ namespace IBODY_WebAPI.Controllers
                 expert.SoNamKinhNghiem,
                 expert.ChuyenMon,
                 expert.SoChungChi,
+                expert.AvatarUrl,
+                expert.AnhChungChi,
                 expert.GioiThieu,
                 Email = expert.TaiKhoan.Email,
                 ThoiGianRanh = thoiGianRanh,

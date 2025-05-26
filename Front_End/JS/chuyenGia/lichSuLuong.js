@@ -73,3 +73,16 @@ function logout() {
   alert("Đăng xuất thành công!");
   window.location.href = "../index.html";
 }
+
+document.getElementById("toggleSidebarBtn").onclick = () => {
+  document.getElementById("sidebar").classList.toggle("collapsed");
+  document.getElementById("sidebar").classList.toggle("expanded");
+  document.getElementById("mainContent").classList.toggle("collapsed");
+  document.getElementById("mainContent").classList.toggle("expanded");
+};
+
+document.getElementById("toggleThemeBtn").onclick = () => {
+  document.body.classList.toggle("dark-mode");
+  document.getElementById("toggleThemeBtn").textContent =
+    document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+};

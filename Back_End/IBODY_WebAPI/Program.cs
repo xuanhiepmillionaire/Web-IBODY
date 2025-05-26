@@ -225,7 +225,7 @@ builder.Services.AddSingleton<ChatMessageService>();
 builder.Services.AddSingleton<IUserIdProvider, NameIdentifierUserIdProvider>();
 
 var app = builder.Build();
-
+BadWordsFilter.Load("badwords.json"); 
 // Middleware pipeline — ORDER IS CRUCIAL
 app.UseStaticFiles();
 

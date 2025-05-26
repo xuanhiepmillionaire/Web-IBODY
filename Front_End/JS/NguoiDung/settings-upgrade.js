@@ -1,7 +1,6 @@
 const user = JSON.parse(localStorage.getItem("user"));
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Xử lý giao diện user login/logout
   const loginLink = document.getElementById("loginLink");
   const userMenu = document.getElementById("userMenu");
   const usernameDisplay = document.getElementById("usernameDisplay");
@@ -34,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
       soNamKinhNghiem: parseInt(document.getElementById("experienceYears").value),
       soChungChi: document.getElementById("certificates").value,
       chuyenMon: document.getElementById("specialty").value,
-      gioiThieu: document.getElementById("introduction").value
+      gioiThieu: document.getElementById("introduction").value,
+      anhChungChi: "" // placeholder, thực tế backend đang upload riêng
     };
 
     try {
@@ -50,6 +50,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
       responseDiv.innerText = data.message;
       responseDiv.style.color = "green";
+
+      // 🔽 Upload ảnh chứng chỉ nếu có
+      const fileInput = document.getElementById("certificateImage");
+      if (fileInput && fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const formData = new FormData();
+        formData.append("file", file);
+
+        try {
+          const uploadRes = await fetch(`http://localhost:5221/api/profile/upload-certificate/${user.taiKhoanId}`, {
+            method: "POST",
+            body: formData
+          });
+
+          const uploadData = await uploadRes.json();
+          console.log("Upload ảnh chứng chỉ thành công:", uploadData);
+        } catch (uploadErr) {
+          console.error("Lỗi upload ảnh chứng chỉ:", uploadErr);
+        }
+      }
+
       form.reset();
     } catch (err) {
       responseDiv.innerText = err.message;
