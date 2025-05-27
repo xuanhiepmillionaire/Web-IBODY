@@ -18,7 +18,7 @@ async function loadReports() {
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${report.id}</td>
-        <td>${report.nguoiBaoCaoId}</td>
+        <td>${report.emailNguoiBaoCao}</td>
         <td>${report.emailNguoiBiBaoCao}</td>
         <td>${report.lyDo}</td>
         <td>${new Date(report.thoiGian).toLocaleString()}</td>

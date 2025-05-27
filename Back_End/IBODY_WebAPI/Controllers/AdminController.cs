@@ -282,6 +282,10 @@ namespace IBODY_WebAPI.Controllers
                     EmailNguoiBiBaoCao = _context.TaiKhoans
                         .Where(tk => tk.Id == bc.DoiTuongId)
                         .Select(tk => tk.Email)
+                        .FirstOrDefault(),
+                    EmailNguoiBaoCao = _context.TaiKhoans
+                        .Where(tk => tk.Id == bc.NguoiBaoCaoId)
+                        .Select(tk => tk.Email)
                         .FirstOrDefault()
                 })
                 .OrderByDescending(bc => bc.ThoiGian)
@@ -289,7 +293,6 @@ namespace IBODY_WebAPI.Controllers
 
             return Ok(new
             {
-                count = danhSach.Count,
                 data = danhSach
             });
         }

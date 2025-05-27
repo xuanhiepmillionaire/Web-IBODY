@@ -1,21 +1,24 @@
 const BASE_API = "http://localhost:5221";
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch(`${BASE_API}/api/admin/yeu-cau-nhan-luong`)
-    .then(async res => {
-      const text = await res.text();
-      try {
-        return JSON.parse(text);
-      } catch {
-        throw new Error("Phản hồi không hợp lệ từ server: " + text);
-      }
-    })
-    .then(data => renderTable(data))
-    .catch(err => console.error("Lỗi load dữ liệu:", err));
+    fetch(`${BASE_API}/api/admin/yeu-cau-nhan-luong`)
+      .then(async res => {
+        const text = await res.text();
+        try {
+          return JSON.parse(text);
+        } catch {
+          throw new Error("Phản hồi không hợp lệ từ server: " + text);
+        }
+      })
+      .then(data => {
+        const list = Array.isArray(data) ? data : data.data;
+        renderTable(list);
+      })
+      .catch(err => console.error("Lỗi load dữ liệu:", err));
 });
 
 function renderTable(list) {
-  const tbody = document.querySelector("#salaryTable tbody");
+  const tbody = document.getElementById("salaryTableBody");
   tbody.innerHTML = "";
 
   list.forEach(item => {
