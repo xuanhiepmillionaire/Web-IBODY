@@ -258,8 +258,7 @@ WHERE id = 1;
 use Final_IBODY
 
 
-SELECT * FROM tai_khoan WHERE email = 'admin@123.com'
-
+SELECT * FROM AspNetRoles
 
 
 
