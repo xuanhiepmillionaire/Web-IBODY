@@ -20,18 +20,19 @@ async function loadExpertRequests() {
         <td>${expert.id}</td>
         <td>${expert.hoTen}</td>
         <td>${expert.chuyenMon}</td>
-        <td>${expert.soNamKinhNghiem}</td>
+        <td>${expert.soNamKinhNghiem} năm</td>
         <td>${expert.soChungChi}</td>
-        
-          <img src="http://localhost:5221${expert.anhChungChi || '/images/no-image.png'}" 
-          alt="chứng chỉ" style="max-width: 200px; margin-top:5px; border:1px solid #ccc;">
-        </td>
-        <td>${expert.gioiThieu}</td>
         <td>
-          <button onclick="duyetChuyenGia(${expert.id})">Duyệt</button>
-          <button onclick="tuChoiChuyenGia(${expert.id})" style="color:red;">Từ chối</button>
+          <img src="http://localhost:5221${expert.anhChungChi || '/images/no-image.png'}"
+            alt="chứng chỉ" class="cert-thumb" onclick="showCertImage(this)">
+        </td>
+        <td style="max-width: 250px;">${expert.gioiThieu}</td>
+        <td>
+          <button class="action-btn btn-approve" onclick="duyetChuyenGia(${expert.id})">Duyệt</button>
+          <button class="action-btn btn-reject" onclick="tuChoiChuyenGia(${expert.id})">Từ chối</button>
         </td>
       `;
+
       tbody.appendChild(tr);
     });
   } catch (err) {
@@ -61,3 +62,18 @@ document.getElementById("logoutLink")?.addEventListener("click", () => {
   localStorage.removeItem("user");
   window.location.href = "../index.html";
 });
+
+
+function showCertImage(img) {
+  const overlay = document.createElement("div");
+  overlay.classList.add("image-overlay");
+  overlay.innerHTML = `
+    <div class="image-popup">
+      <img src="${img.src}" alt="Xem ảnh lớn">
+    </div>
+  `;
+  overlay.addEventListener("click", () => {
+    overlay.remove(); // bấm ngoài ảnh để đóng
+  });
+  document.body.appendChild(overlay);
+}

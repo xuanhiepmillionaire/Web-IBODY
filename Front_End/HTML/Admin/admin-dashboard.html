@@ -5,51 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="../../CSS/AD/dashboard.css" />
+  <!-- Font Awesome CDN để thêm biểu tượng -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<!-- Animate.css để thêm hiệu ứng vào card -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 </head>
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>Admin Dashboard</h2>
-    <a href="admin-dashboard.html" class="active">Tổng quan</a>
+  <div class="admin-wrapper"> <!-- THÊM THẺ BAO -->
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Admin Dashboard</h2>
+      <a href="admin-dashboard.html" class="active">Tổng quan</a>
       <a href="admin-users.html">Tài khoản</a>
       <a href="admin-duyet-chuyen-gia.html">Duyệt chuyên gia</a>
       <a href="admin-reports.html">Tố cáo</a>
       <a href="admin-lichhen.html">Lịch hẹn</a>
       <a href="admin-danhgia.html">Đánh giá</a>
-      <a href="adminPhuongThuc.html" >Phương thức</a>
+      <a href="adminPhuongThuc.html">Phương thức</a>
       <a href="admin-salary.html">Thanh toán lương</a>
       <a href="admin-yeu-cau-chuyen-khoan.html">Yêu cầu chuyển khoản</a>
-      <a href="./admin-tinnhan.html">tin nhắn</a>
       <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <h1>Thống kê tổng quan</h1>
+
+      <div class="dashboard-container">
+  <div class="stat-card animate__animated animate__fadeInUp">
+    <i class="fas fa-users icon"></i>
+    <div>
+      <h3 id="statTaiKhoan">...</h3>
+      <p>Tổng tài khoản</p>
+    </div>
   </div>
+  <div class="stat-card animate__animated animate__fadeInUp">
+    <i class="fas fa-user-tie icon"></i>
+    <div>
+      <h3 id="statChuyenGia">...</h3>
+      <p>Tổng chuyên gia</p>
+    </div>
+  </div>
+  <div class="stat-card animate__animated animate__fadeInUp">
+    <i class="fas fa-user-check icon"></i>
+    <div>
+      <h3 id="statYeuCau">...</h3>
+      <p>Yêu cầu nâng cấp</p>
+    </div>
+  </div>
+  <div class="stat-card animate__animated animate__fadeInUp">
+    <i class="fas fa-calendar-check icon"></i>
+    <div>
+      <h3 id="statLichHen">...</h3>
+      <p>Lịch hẹn</p>
+    </div>
+  </div>
+  <div class="stat-card animate__animated animate__fadeInUp">
+    <i class="fas fa-exclamation-triangle icon"></i>
+    <div>
+      <h3 id="statBaoCao">...</h3>
+      <p>Tố cáo</p>
+    </div>
+  </div>
+</div>
 
-  <!-- Main content -->
-  <div class="main-content">
-    <h1>Quản trị hệ thống</h1>
-
-    <div class="stat-cards">
-      <div class="stat-card">
-        <h3>Tổng người dùng</h3>
-        <p id="countUsers">0</p>
-      </div>
-      <div class="stat-card">
-        <h3>Tổng chuyên gia</h3>
-        <p id="countExperts">0</p>
-      </div>
-      <div class="stat-card">
-        <h3>Yêu cầu nâng cấp</h3>
-        <p id="countUpgrade">0</p>
-      </div>
-      <div class="stat-card">
-        <h3>Lịch hẹn</h3>
-        <p id="countAppointments">0</p>
-      </div>
-      <div class="stat-card">
-        <h3>Tố cáo</h3>
-        <p id="countReports">0</p>
+      <div class="section">
+        <h3>Biểu đồ thống kê tổng quan</h3>
+        <canvas id="thongKeBieuDo" height="60"></canvas>
       </div>
     </div>
 
+  </div> <!-- HẾT admin-wrapper -->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="../../JS/Admin/admin-dashboard.js"></script>
 </body>
 </html>

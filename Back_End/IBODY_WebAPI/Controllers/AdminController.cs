@@ -505,14 +505,6 @@ namespace IBODY_WebAPI.Controllers
 
             return Ok(new { message = "Đã xoá đánh giá thành công." });
         }
-        [HttpGet("demSoLuongChuyenGia")]
-        public async Task<IActionResult> CountChuyenGia()
-        {
-            var count = await _context.TaiKhoans
-                .CountAsync(tk => tk.VaiTro == "chuyen_gia");
-
-            return Ok(new { count });
-        }
 
         [HttpGet("yeu-cau-nhan-luong")]
         public async Task<IActionResult> DanhSachYeuCauNhanLuong()
@@ -654,6 +646,25 @@ namespace IBODY_WebAPI.Controllers
                 .ToListAsync();
 
             return Ok(lichSuList);
+        }
+        
+        [HttpGet("dashboard/thong-ke-tong-quan")]
+        public async Task<IActionResult> GetThongKeTongQuan()
+        {
+            var soTaiKhoan = await _context.TaiKhoans.CountAsync();
+            var soChuyenGia = await _context.TaiKhoans.CountAsync(tk => tk.VaiTro == "chuyen_gia");
+            var soYeuCauNangCap = await _context.ChuyenGia.CountAsync(cg => cg.TrangThai == "cho_duyet");
+            var soLichHen = await _context.LichHens.CountAsync();
+            var soBaoCao = await _context.BaoCaoViPhams.CountAsync(bc => bc.LoaiDoiTuong == "chuyen_gia");
+
+            return Ok(new
+            {
+                taiKhoan = soTaiKhoan,
+                chuyenGia = soChuyenGia,
+                yeuCauNangCap = soYeuCauNangCap,
+                lichHen = soLichHen,
+                baoCao = soBaoCao
+            });
         }
 
 

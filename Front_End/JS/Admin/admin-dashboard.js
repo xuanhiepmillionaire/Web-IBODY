@@ -3,55 +3,57 @@ const user = JSON.parse(localStorage.getItem("user"));
 if (!user || !Array.isArray(user.roles) || !user.roles.includes("quan_tri")) {
   window.location.href = "index.html";
 }
-async function loadDashboardStats() {
-  try {
-    const [resUsers, resExperts, resAppointments, resReviews, resReports, resUpgrades] = await Promise.all([
-      fetch("http://localhost:5221/api/admin/accounts", {
-        method: "GET",
-        credentials: "include"
-      }),
-      fetch("http://localhost:5221/api/admin/demSoLuongChuyenGia", {
-        method: "GET",
-        credentials: "include"
-      }),
-      fetch("http://localhost:5221/api/admin/lich-hen", {
-        method: "GET",
-        credentials: "include"
-      }),
-      fetch("http://localhost:5221/api/admin/danhGiaCuaChuyenGia", {
-        method: "GET",
-        credentials: "include"
-      }),
-      fetch("http://localhost:5221/api/admin/bao-cao", {
-        method: "GET",
-        credentials: "include"
-      }),
-      fetch("http://localhost:5221/api/admin/expert-requests", {
-        method: "GET",
-        credentials: "include"
-      }),
-    ]);
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("http://localhost:5221/api/admin/dashboard/thong-ke-tong-quan")
+    .then(response => {
+      if (!response.ok) throw new Error("Lỗi khi lấy dữ liệu thống kê");
+      return response.json();
+    })
+    .then(data => {
+      // Hiển thị số liệu
+      document.getElementById("statTaiKhoan").textContent = data.taiKhoan;
+      document.getElementById("statChuyenGia").textContent = data.chuyenGia;
+      document.getElementById("statYeuCau").textContent = data.yeuCauNangCap;
+      document.getElementById("statLichHen").textContent = data.lichHen;
+      document.getElementById("statBaoCao").textContent = data.baoCao;
 
-    const users = await resUsers.json();
-    const experts = await resExperts.json();
-    const appointments = await resAppointments.json();
-    const reviews = await resReviews.json();
-    const reports = await resReports.json();
-    const upgradeRequests = await resUpgrades.json();
+      // Tạo biểu đồ sau khi có dữ liệu
+      const ctx = document.getElementById('thongKeBieuDo').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Tài khoản', 'Chuyên gia', 'Nâng cấp', 'Lịch hẹn', 'Tố cáo'],
+          datasets: [{
+            label: 'Số lượng',
+            data: [
+              data.taiKhoan,
+              data.chuyenGia,
+              data.yeuCauNangCap,
+              data.lichHen,
+              data.baoCao
+            ],
+            backgroundColor: '#A993EC'
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: { beginAtZero: true }
+          }
+        }
+      });
+    })
+    .catch(error => {
+      console.error("Lỗi:", error);
+      alert("Không thể tải dữ liệu thống kê.");
+    });
+});
 
-    document.getElementById("countUsers").innerText = users.count || 0;
-    document.getElementById("countExperts").innerText = experts.count || 0;
-    document.getElementById("countAppointments").innerText = appointments.count || 0;
-    document.getElementById("countReviews").innerText = reviews.count || 0;
-    document.getElementById("countReports").innerText = reports.count || 0;
-    document.getElementById("countUpgrade").innerText = upgradeRequests.count || 0;
-  } catch (err) {
-    console.error("Lỗi tải thống kê:", err);
-  }
-}
 
 
-document.addEventListener("DOMContentLoaded", loadDashboardStats);
 
 document.getElementById("logoutLink")?.addEventListener("click", () => {
   localStorage.removeItem("user");
@@ -59,30 +61,3 @@ document.getElementById("logoutLink")?.addEventListener("click", () => {
 });
 
 
-
-
-// động giao diện
-document.addEventListener("DOMContentLoaded", function () {
-  // Giả lập dữ liệu mẫu
-  const stats = {
-    countUsers: 128,
-    countExperts: 42,
-    countUpgrade: 5,
-    countAppointments: 66,
-    countReports: 12
-  };
-
-  // Cập nhật DOM
-  for (let key in stats) {
-    const el = document.getElementById(key);
-    if (el) el.textContent = stats[key];
-  }
-
-  // Hiệu ứng nạp động (ví dụ, có thể dùng spinner thực tế nếu gọi API)
-  const loadingSections = document.querySelectorAll(".section p");
-  loadingSections.forEach(p => {
-    setTimeout(() => {
-      p.textContent = "Dữ liệu đã được tải.";
-    }, 1500);
-  });
-});

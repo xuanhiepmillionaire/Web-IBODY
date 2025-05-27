@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -6,51 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quản lý phương thức thanh toán</title>
   <link rel="stylesheet" href="../../CSS/AD/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>Admin Dashboard</h2>
-    <a href="admin-dashboard.html">Tổng quan</a>
-    <a href="admin-users.html">Tài khoản</a>
-    <a href="admin-duyet-chuyen-gia.html">Duyệt chuyên gia</a>
-    <a href="admin-reports.html">Tố cáo</a>
-    <a href="admin-lichhen.html">Lịch hẹn</a>
-    <a href="admin-danhgia.html">Đánh giá</a>
-    <a href="adminPhuongThuc.html" class="active">Phương thức</a>
-    <a href="admin-salary.html">Thanh toán lương</a>
-    <a href="admin-yeu-cau-chuyen-khoan.html">Yêu cầu chuyển khoản</a>
-    <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
-  </div>
+  <div class="admin-wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Admin Dashboard</h2>
+      <a href="admin-dashboard.html">Tổng quan</a>
+      <a href="admin-users.html">Tài khoản</a>
+      <a href="admin-duyet-chuyen-gia.html">Duyệt chuyên gia</a>
+      <a href="admin-reports.html">Tố cáo</a>
+      <a href="admin-lichhen.html">Lịch hẹn</a>
+      <a href="admin-danhgia.html">Đánh giá</a>
+      <a href="adminPhuongThuc.html" class="active">Phương thức</a>
+      <a href="admin-salary.html">Thanh toán lương</a>
+      <a href="admin-yeu-cau-chuyen-khoan.html">Yêu cầu chuyển khoản</a>
+      <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
+    </div>
 
-  <!-- Main content -->
-  <div class="main-content">
-    <h1>Danh sách phương thức thanh toán</h1>
+    <!-- Main content -->
+    <div class="main-content animate__animated animate__fadeIn">
 
-    <form id="addForm">
-      <input type="text" id="ten" placeholder="Tên phương thức" required />
-      <input type="text" id="moTa" placeholder="Mô tả (tùy chọn)" />
-      <select id="trangThai">
-        <option value="hien">Hiện</option>
-        <option value="an">Ẩn</option>
-      </select>
-      <button type="submit">Thêm mới</button>
-    </form>
+      <div class="section animate__animated animate__fadeInUp">
+        <h3><i class="fas fa-plus-circle"></i> Thêm phương thức mới</h3>
+        <form id="addForm" style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px;">
+          <input type="text" id="ten" placeholder="Tên phương thức" required />
+          <input type="text" id="moTa" placeholder="Mô tả (tùy chọn)" />
+          <select id="trangThai">
+            <option value="hien">Hiện</option>
+            <option value="an">Ẩn</option>
+          </select>
+          <button type="submit" class="action-btn btn-approve">Thêm mới</button>
+        </form>
 
-    <table class="admin-table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Tên</th>
-          <th>Mô tả</th>
-          <th>Trạng thái</th>
-          <th>Hành động</th>
-        </tr>
-      </thead>
-      <tbody id="ptttBody">
-        <!-- Dữ liệu sẽ được render tại đây -->
-      </tbody>
-    </table>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tên</th>
+              <th>Mô tả</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="ptttBody">
+            <!-- Dữ liệu sẽ được render tại đây -->
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <script src="../../JS/Admin/adminPhuongThuc.js"></script>

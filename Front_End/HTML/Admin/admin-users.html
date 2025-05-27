@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -6,45 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quản lý tài khoản</title>
   <link rel="stylesheet" href="../../CSS/AD/dashboard.css" />
+  <!-- Font Awesome + Animate.css để tăng hiệu ứng -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>Admin Dashboard</h2>
-    <a href="admin-dashboard.html">Tổng quan</a>
-    <a href="admin-users.html" class="active">Tài khoản</a>
-    <a href="admin-duyet-chuyen-gia.html">Duyệt chuyên gia</a>
-    <a href="admin-reports.html">Tố cáo</a>
-    <a href="admin-lichhen.html">Lịch hẹn</a>
-    <a href="admin-danhgia.html">Đánh giá</a>
-    <a href="adminPhuongThuc.html">Phương thức</a>
-    <a href="admin-salary.html">Thanh toán lương</a>
-    <a href="admin-yeu-cau-chuyen-khoan.html">Yêu cầu chuyển khoản</a>
-    <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
-  </div>
+  <div class="admin-wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Admin Dashboard</h2>
+      <a href="admin-dashboard.html">Tổng quan</a>
+      <a href="admin-users.html" class="active">Tài khoản</a>
+      <a href="admin-duyet-chuyen-gia.html">Duyệt chuyên gia</a>
+      <a href="admin-reports.html">Tố cáo</a>
+      <a href="admin-lichhen.html">Lịch hẹn</a>
+      <a href="admin-danhgia.html">Đánh giá</a>
+      <a href="adminPhuongThuc.html">Phương thức</a>
+      <a href="admin-salary.html">Thanh toán lương</a>
+      <a href="admin-yeu-cau-chuyen-khoan.html">Yêu cầu chuyển khoản</a>
+      <a href="#" id="logoutLink" style="color: red;">Đăng xuất</a>
+    </div>
 
-  <!-- Main content -->
-  <div class="main-content">
-    <h1>Quản lý tài khoản</h1>
+    <!-- Main content -->
+    <div class="main-content animate__animated animate__fadeIn">
 
-    <div class="section">
-      <h3>Danh sách tài khoản</h3>
-      <div style="overflow-x:auto;">
-        <table class="admin-table" style="width:100%; border-collapse: collapse;">
-          <thead>
-            <tr style="background-color:#007bff; color:white;">
-              <th style="padding: 10px;">ID</th>
-              <th style="padding: 10px;">Email</th>
-              <th style="padding: 10px;">Vai trò</th>
-              <th style="padding: 10px;">Trạng thái</th>
-              <th style="padding: 10px;">Họ tên</th>
-              <th style="padding: 10px;">Hành động</th>
-            </tr>
-          </thead>
-          <tbody id="userTableBody">
-            <!-- Dữ liệu tài khoản sẽ được render tại đây -->
-          </tbody>
-        </table>
+      <div class="section animate__animated animate__fadeInUp">
+        <h3><i class="fas fa-users"></i> Danh sách tài khoản</h3>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Vai trò</th>
+                <th>Trạng thái</th>
+                <th>Họ tên</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody id="userTableBody">
+              <!-- Tài khoản sẽ được render ở đây -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
