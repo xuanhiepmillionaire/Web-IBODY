@@ -19,7 +19,7 @@
     <button id="menu-toggle" class="menu-toggle">☰</button>
 
     <nav class="nav">
-      <a href="../Index.html" class="active">Trang chủ</a>
+      <a href="../Index.html">Trang chủ</a>
       <a href="https://www.facebook.com/groups/1717452315821331">Cộng Đồng</a>
       <a href="search-expert.html">Tư vấn</a>
       <a href="tin-nhan-user.html">Nhắn tin</a>
@@ -54,7 +54,7 @@
     </div>
     <div class="expert-actions">
       <button class="btn btn-primary" onclick="datLich()">Đặt lịch hẹn</button>
-      <button id="openReportModalBtn" class="btn btn-outline-danger">🚨 Tố cáo</button>
+      <button id="openReportModalBtn" class="btn btn-outline-danger"> Tố cáo</button>
     </div>
   </section>
 
@@ -65,26 +65,26 @@
   </div>
 
   <div class="tab-content" style="display: block;">
-    <h3>🧑‍💼 Giới thiệu</h3>
+    <h3> Giới thiệu</h3>
     <p id="expertGioiThieu"></p>
 
-    <h4>🎓 Chuyên môn</h4>
+    <h4>Chuyên môn</h4>
     <p><span id="expertChuyenMon">T</span></p>
 
-    <h4>📌 Kinh nghiệm</h4>
+    <h4> Kinh nghiệm</h4>
     <p><span id="expertKinhNghiem"></span> năm</p>
 
-    <h4>📄 Chứng chỉ</h4>
+    <h4> Chứng chỉ</h4>
     <p><span id="expertChungChi"></span></p>
   </div>
 
   <div class="tab-content" style="display: none;">
-    <h3>📅 Thời gian rảnh</h3>
+    <h3>Thời gian rảnh</h3>
     <ul id="expertThoiGianRanh"></ul>
   </div>
 
   <div class="tab-content" style="display: none;">
-    <h3>📝 Đánh giá từ người dùng</h3>
+    <h3> Đánh giá từ người dùng</h3>
     <ul id="expertDanhGiaList"></ul>
     <div class="review-form">
   <div class="star-rating" id="starRating">
@@ -104,7 +104,7 @@
   <div id="reportModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>🚨 Tố cáo chuyên gia</h2>
+      <h2>Tố cáo chuyên gia</h2>
       <textarea id="reportReason" placeholder="Nhập lý do tố cáo..." required></textarea>
       <button id="submitReportBtn" class="btn btn-danger">Gửi báo cáo</button>
     </div>
@@ -115,14 +115,19 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-about">
-        <h3>Về chúng tôi</h3>
-        <p>IBODY là một dự án nhằm kết nối học sinh với các chuyên gia tâm lý đáng tin cậy, hỗ trợ tư vấn những vấn đề tâm lý, sinh lý và tình dục mà các em còn ngần ngại chia sẻ với phụ huynh.</p>
-      </div>
-      <div class="footer-contact">
-        <h4>Liên hệ</h4>
-        <p>Email: duytruongk22@gmail.com</p>
-        <p>Hotline: 0889 225 315</p>
-      </div>
+          <h4>Về chúng tôi</h4>
+          <p>
+            IBODY là dự án kết nối học sinh với chuyên gia tâm lý, giúp các em
+            hiểu và phát triển bản thân một cách lành mạnh.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h4>Liên hệ</h4>
+          <p>Email: duytruongk22@gmail.com</p>
+          <p>Email: xuanhiep.ht4f@gmail.com</p>
+          <p>Email: baotram.hutech@gmail.com</p>
+          <p>Hotline: 0889 225 315</p>
+        </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 ibody. All rights reserved.</p>
@@ -133,21 +138,3 @@
 
 </body>
 </html>
-<!-- <script>
-  
-  const loginLink = document.getElementById("loginLink");
-  const userMenu = document.getElementById("userMenu");
-  const usernameDisplay = document.getElementById("usernameDisplay");
-  const avatarImg = document.querySelector(".user-button img");
-
-  if (loginLink && userMenu && usernameDisplay) {
-    loginLink.style.display = "none";
-    userMenu.style.display = "inline-block";
-    usernameDisplay.innerText = currentUser.fullName || currentUser.username;
-    if (avatarImg) {
-      avatarImg.src = user.avatarUrl
-        ? `${BASE_API}${user.avatarUrl}`
-        : "../../img/default-avatar.png";
-    }
-  }
-  </script> -->

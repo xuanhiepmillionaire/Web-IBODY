@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (err) {
       console.error(err);
-      alert("Lỗi kết nối đến máy chủ.");
+      // alert("Lỗi kết nối đến máy chủ.");
     }
   }
 

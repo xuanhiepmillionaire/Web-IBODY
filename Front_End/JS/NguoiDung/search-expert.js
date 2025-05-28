@@ -103,7 +103,6 @@ async function loadExperts(keyword = "", chuyenMon = "", thu = "", kinhNghiem = 
         <h3>${expert.hoTen}</h3>
         <p><strong>Chuyên môn:</strong> ${expert.chuyenMon}</p>
         <p><strong>Kinh nghiệm:</strong> ${expert.soNamKinhNghiem} năm</p>
-        <p><strong>Email:</strong> ${expert.email}</p>
         <button onclick="viewExpertDetail(${expert.id})">Xem hồ sơ</button>
       `;
       listContainer.appendChild(card);
