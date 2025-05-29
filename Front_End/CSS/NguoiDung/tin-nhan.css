@@ -118,7 +118,7 @@
   
   #messageForm button {
     padding: 10px 16px;
-    background-color: #4a90e2;
+    background-color: #A993EC;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -127,7 +127,7 @@
   }
   
   #messageForm button:hover {
-    background-color: #357acc;
+    background-color: #5a4d84;
   }
   
   /* Responsive */

@@ -13,7 +13,7 @@
 
 .submit-btn {
   margin-top: 16px;
-  background: #3498db;
+  background: #A993EC;
   border: none;
   color: white;
   padding: 10px 18px;
@@ -24,7 +24,7 @@
 }
 
 .submit-btn:hover {
-  background: #2980b9;
+  background: #5a4d84;
 }
 
 .dark-mode .section {
@@ -33,5 +33,5 @@
 }
 
 .dark-mode .submit-btn {
-  background: #2e7d32;
+  background: #A993EC;
 }

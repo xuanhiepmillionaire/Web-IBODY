@@ -33,7 +33,7 @@ th, td {
 }
 
 th {
-  background-color: #2980b9;
+  background-color: #A993EC;
   color: white;
   text-transform: uppercase;
 }
@@ -78,7 +78,7 @@ tr:hover {
   td:nth-of-type(7)::before { content: "Trạng thái"; }
 }
 a.link {
-  color: #2980b9;
+  color: #5a4d84;
   text-decoration: none;
 }
 a.link:hover {

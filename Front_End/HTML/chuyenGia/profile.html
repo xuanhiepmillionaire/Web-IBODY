@@ -4,22 +4,23 @@
   <meta charset="UTF-8" /> <!-- Hỗ trợ tiếng Việt và ký tự đặc biệt -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Hỗ trợ responsive -->
   <title>Bảng điều khiển chuyên gia</title>
+  <!-- css -->
+  <link rel="stylesheet" href="../../CSS/chuyenGia/profile.css" />
+  <link rel="stylesheet" href="../../CSS/chuyenGia/TongHopChuyenGia.css" />
   <!-- Font Awesome: Thư viện icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <!-- Flatpickr: Thư viện chọn ngày -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="../../CSS/chuyenGia/profile.css" />
   <!-- JS thư viện flatpickr -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://npmcdn.com/flatpickr/dist/l10n/vn.js"></script>
-<link rel="stylesheet" href="../../CSS/chuyenGia/TongHopChuyenGia.css" />
 </head>
 <body>
   <!-- THANH TRÊN CÙNG (TOPBAR) -->
   <div class="topbar">
     <div class="topbar-left">
       <button id="toggleSidebarBtn" title="Ẩn/Hiện menu">☰</button>
-      <span class="topbar-title">IBODY – Thấu hiểu thân thể bạn</span>
+      <span class="topbar-title">IBODY - Kết nối để thấu hiểu</span>
     </div>
     <button id="toggleThemeBtn" title="Đổi giao diện">🌙</button>
   </div>
@@ -52,14 +53,18 @@
       <p><strong>Số tài khoản:</strong> <span id="cgSoTaiKhoan"></span></p>
       <p><strong>Tên ngân hàng:</strong> <span id="cgTenNganHang"></span></p>
       <p id="avgRating"></p>
-      <p>Ảnh chứng chỉ: <button id="viewCertBtn" type="button">Xem ảnh chứng chỉ</button></p>
-
+      <p>Ảnh chứng chỉ:
+        <button id="viewCertBtn" type="button">
+          <!-- <i class="fa-solid fa-file-image"></i> -->
+          Xem ảnh chứng chỉ
+        </button>
+      </p>
       <!-- Modal ảnh chứng chỉ -->
       <div id="certModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:10000;">
         <img id="certModalImg" alt="Ảnh chứng chỉ" style="max-width:90%; max-height:90%; border-radius:12px; box-shadow:0 0 10px rgba(255,255,255,0.8); cursor:pointer;" />
       </div>
 
-      <button id="editProfileBtn">✏️ Chỉnh sửa hồ sơ</button>
+      <button id="editProfileBtn">Chỉnh sửa hồ sơ</button>
     </div>
 
   </div>
@@ -85,8 +90,8 @@
       <input type="time" id="tu" required />
       <label for="den">Đến (giờ):</label>
       <input type="time" id="den" required />
-      <button type="submit" class="add-slot-btn">✅ Lưu</button>
-      <button type="button" class="add-slot-btn" style="background-color:#dc3545;" onclick="resetScheduleForm()">❌ Huỷ</button>
+      <button type="submit" class="add-slot-btn">Lưu</button>
+      <button type="button" class="add-slot-btn" style="background-color:#dc3545;" onclick="resetScheduleForm()">Huỷ</button>
     </form>
 
     <table id="scheduleTable" style="margin-top: 20px; width: 100%;">
@@ -111,7 +116,7 @@
     <textarea id="editIntro" placeholder="Giới thiệu bản thân" required></textarea>
     <input type="text" id="editSoTaiKhoan" placeholder="Số tài khoản ngân hàng">
     <input type="text" id="editTenNganHang" placeholder="Tên ngân hàng">
-    <button type="submit">💾 Lưu thay đổi</button>
+    <button type="submit">Lưu thay đổi</button>
     <button type="button" onclick="document.getElementById('edit-profile-modal').style.display='none'">Đóng</button>
   </form>
   <div id="editResult"></div>

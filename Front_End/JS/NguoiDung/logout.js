@@ -1,4 +1,3 @@
-
 function logout() {
   localStorage.removeItem("user");
   alert("Đăng xuất thành công!");
@@ -16,7 +15,6 @@ document.addEventListener("click", function (e) {
     dropdown.classList.remove("show");
   }
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("menu-toggle");

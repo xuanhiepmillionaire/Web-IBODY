@@ -67,13 +67,13 @@ body {
 
 #supportForm input:focus,
 #supportForm textarea:focus {
-  border-color: #4f46e5;
+  border-color: #A993EC;
   outline: none;
   background-color: #fff;
 }
 
 .btn-submit {
-  background-color: #4f46e5;
+  background-color: #A993EC;
   color: white;
   border: none;
   padding: 12px 20px;
@@ -84,7 +84,7 @@ body {
 }
 
 .btn-submit:hover {
-  background-color: #4338ca;
+  background-color: #5a4d84;
 }
 
 /* Responsive */

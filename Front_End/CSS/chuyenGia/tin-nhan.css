@@ -108,7 +108,7 @@ html, body {
 /* Tin nhắn từ chuyên gia */
 .message-item.me {
   align-self: flex-end;
-  background: #d0f0c0;
+  background: #A993EC;
   border-radius: 12px 12px 0 12px;
   padding: 1px 10px;
   max-width: 60%;
@@ -154,7 +154,7 @@ html, body {
 }
 
 #sendButton {
-  background: #3498db;
+  background: #A993EC;
   color: white;
   padding: 12px 16px;
   border: none;
@@ -162,13 +162,13 @@ html, body {
   cursor: pointer;
 }
 #sendButton:hover {
-  background: #2980b9;
+  background: #5a4d84;
 }
 
 /* Nút gọi video */
 #callButton {
   padding: 8px 12px;
-  background-color: #007bff;
+  background-color: #A993EC;
   color: white;
   border: none;
   border-radius: 5px;

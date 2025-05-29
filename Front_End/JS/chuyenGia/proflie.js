@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-
     document.getElementById('editProfileBtn').addEventListener('click', () => {
     document.getElementById('edit-profile-modal').style.display = 'block';
   });

@@ -8,7 +8,7 @@ body {
 
 h1 {
   text-align: center;
-  color: #2c3e50;
+  color: #5a4d84; /* #2c3e50; */
   margin-bottom: 30px;
   font-size: 28px;
   animation: fadeInDown 0.8s ease;
@@ -29,10 +29,10 @@ h1 {
 }
 
 .section h2 {
-  color: #34495e;
+  color: #5a4d84; /* #34495e */
   margin-bottom: 16px;
   font-size: 22px;
-  border-left: 6px solid #3498db;
+  border-left: 6px solid #A993EC; /* #3498db; */
   padding-left: 12px;
 }
 
@@ -48,14 +48,14 @@ h1 {
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #3498db;
+  border: 3px solid #A993EC; /* #3498db; */
   margin-bottom: 16px;
   animation: fadeIn 1s ease;
 }
 
 #withdrawRequestBtn {
   margin-top: 16px;
-  background: #3498db;
+  background: #A993EC; /* #3498db; */
   border: none;
   color: white;
   padding: 10px 18px;
@@ -66,7 +66,7 @@ h1 {
 }
 
 #withdrawRequestBtn:hover {
-  background: #2980b9;
+  background: #8e78d0; /* #2980b9; */
   transform: scale(1.05);
 }
 
@@ -76,8 +76,8 @@ ul {
 }
 
 ul li {
-  background: #f0f4fa;
-  border-left: 4px solid #3498db;
+  background: #f4f2fa;
+  border-left: 4px solid #A993EC; /* #3498db; */
   padding: 10px 14px;
   margin-bottom: 8px;
   border-radius: 6px;
@@ -88,13 +88,13 @@ ul li {
   background: #f9f9fc;
   padding: 10px 12px;
   margin-bottom: 10px;
-  border-left: 4px solid #8e44ad;
+  border-left: 4px solid #A993EC;
   border-radius: 6px;
   animation: fadeIn 0.5s ease;
 }
 
 #avgRating {
-  color: #e67e22;
+  color: #A993EC; /* #3498db; */
   font-weight: bold;
   font-size: 18px;
 }
@@ -116,7 +116,7 @@ ul li {
   left: 0;
   width: 220px;
   height: calc(100% - 70px);
-  background: linear-gradient(to bottom, #2c3e50, #34495e);
+  background: linear-gradient(to bottom, #6d5fae, #5a4d84); /* (to bottom, #2c3e50, #34495e); */
   padding: 20px 15px;
   display: flex;
   flex-direction: column;
@@ -125,7 +125,8 @@ ul li {
 }
 
 .sidebar a {
-  color: #ecf0f1;
+  display: block; /* đã sửa */
+  color: #f2f2f2;  /* #ecf0f1; */
   text-decoration: none;
   padding: 10px 15px;
   border-radius: 6px;
@@ -135,7 +136,9 @@ ul li {
 
 .sidebar a:hover,
 .sidebar a.active {
-  background: #2980b9;
+  /* background: #2980b9; */
+  background: #A993EC;
+  color: white;
 }
 
 .main-content {
@@ -146,7 +149,7 @@ ul li {
 /* Top header bar (logo + slogan) */
 .topbar {
   height: 70px;
-  background: linear-gradient(to right, #3498db, #2ecc71);
+  background: linear-gradient(to right, #A993EC, #bca6f4); /* (to right, #3498db, #2ecc71); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,7 +181,8 @@ ul li {
 /* TOPBAR */
 .topbar {
   height: 60px;
-  background: linear-gradient(to right, #3498db, #2ecc71);
+  /* background: linear-gradient(to right, #3498db, #2ecc71); */
+  background: linear-gradient(to right, #A993EC, #bca6f4);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -213,7 +217,8 @@ ul li {
   top: 60px;
   left: 0;
   height: calc(100% - 60px);
-  background: linear-gradient(to bottom, #2c3e50, #34495e);
+  /* background: linear-gradient(to bottom, #2c3e50, #34495e); */
+  background: linear-gradient(to bottom, #6d5fae, #5a4d84);
   overflow: hidden;
   transition: width 0.3s ease;
 }
@@ -229,7 +234,8 @@ ul li {
 
 .sidebar a {
   display: block;
-  color: #ecf0f1;
+  /* color: #ecf0f1; */
+  color: #f2f2f2;
   text-decoration: none;
   padding: 12px 20px;
   transition: background 0.3s;
@@ -238,7 +244,8 @@ ul li {
 
 .sidebar a:hover,
 .sidebar a.active {
-  background: #2980b9;
+  background: #A993EC;
+  color: white;
 }
 
 /* MAIN CONTENT */
@@ -255,11 +262,6 @@ ul li {
   margin-left: 0;
 }
 
-
-
-
-
-
 /* chế độ tôis*/
 body.dark-mode {
   background: linear-gradient(to bottom right, #1e1e1e, #2c2c2c);
@@ -267,12 +269,12 @@ body.dark-mode {
 }
 
 body.dark-mode .section {
-  background-color: #2e2e2e;
+  background-color: #2e2e3f; /* #2e2e2e; */
   box-shadow: 0 6px 18px rgba(255, 255, 255, 0.05);
 }
 
 body.dark-mode .sidebar {
-  background: linear-gradient(to bottom, #111, #222);
+  background: linear-gradient(to bottom, #1a1335, #261b4d); /* (to bottom, #111, #222); */
 }
 
 body.dark-mode .sidebar a {
@@ -281,7 +283,9 @@ body.dark-mode .sidebar a {
 
 body.dark-mode .sidebar a:hover,
 body.dark-mode .sidebar a.active {
-  background: #555;
+  /* background: #555; */
+  background: #A993EC;
+  color: #fff;
 }
 
 body.dark-mode .topbar {
@@ -290,7 +294,8 @@ body.dark-mode .topbar {
 }
 
 body.dark-mode #withdrawRequestBtn {
-  background: #555;
+  /* background: #555; */
+  background: #A993EC;
   color: white;
 }
 

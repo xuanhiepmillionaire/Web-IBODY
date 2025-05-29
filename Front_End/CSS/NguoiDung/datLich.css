@@ -13,10 +13,12 @@
   }
 
   #slotContainer button.selected {
-    background-color: #0d6efd;
+    background-color: #A993EC;
     color: white;
     font-weight: bold;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 5px rgba(169, 147, 236, 0.6);
+    transform: scale(1.03);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
   }
 
   .card {

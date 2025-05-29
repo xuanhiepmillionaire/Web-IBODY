@@ -1,6 +1,6 @@
 body {
   font-family: "Segoe UI", sans-serif;
-  background-color: #f8f9fa;
+  background-color: #f4f3fa; /* #f8f9fa; */
   margin: 0;
   padding: 20px;
   color: #333;
@@ -12,7 +12,7 @@ body {
 }
 
 h1, h2 {
-  color: #007bff;
+  color: #A993EC; /* #007bff; */
   text-align: center;
   margin-bottom: 20px;
 }
@@ -24,20 +24,26 @@ section {
 .lich-item {
   background: #fff;
   border: 1px solid #ddd;
-  border-left: 6px solid #007bff;
+  border-left: 6px solid #A993EC; /* #007bff; */
   border-radius: 6px;
   padding: 16px;
   margin-bottom: 15px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.lich-item:hover {
+  transform: translateY(-2px);
 }
 
 .lich-item h4 {
   margin: 0 0 10px;
-  color: #333;
+  color: #4B3E7A; /* #333; */
 }
 
 .lich-item p {
-  margin: 4px 0;
+  margin: 6px 0;
+  color: #444;
 }
 
 .btn-group {
@@ -52,24 +58,27 @@ section {
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn-group button:first-child {
-  background-color: #28a745;
+  background-color: #A993EC; /* #007bff; */
   color: #fff;
 }
 
 .btn-group button:first-child:hover {
-  background-color: #218838;
+  background-color: #8c78db; /* #0056b3; */
+  transform: scale(1.03);
 }
 
 .btn-group button:last-child {
-  background-color: #dc3545;
+  background-color: #e74c3c;
   color: #fff;
 }
 
 .btn-group button:last-child:hover {
-  background-color: #c82333;
+  background-color: #c0392b;
+  transform: scale(1.03);
 }
 
 @media (max-width: 600px) {
@@ -79,11 +88,9 @@ section {
   }
 }
 
-
-
 .lich-item {
   background: #f9f9fc;
-  border-left: 4px solid #3498db;
+  border-left: 4px solid #A993EC; /* #3498db; */
   padding: 16px;
   border-radius: 10px;
   margin-bottom: 16px;
@@ -109,7 +116,7 @@ section {
 }
 
 .btn-group button {
-  background: #3498db;
+  background: #A993EC; /* #3498db; */
   color: white;
   padding: 8px 14px;
   border: none;
@@ -120,5 +127,5 @@ section {
 }
 
 .btn-group button:hover {
-  background: #2980b9;
+  background: #5a4d84; /* #3498db; */
 }

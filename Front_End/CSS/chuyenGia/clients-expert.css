@@ -19,3 +19,34 @@
 .dark-mode .clients-table td {
   color: #eee;
 }
+
+/* ------Thêm màu sắc cho giao diện------- */
+.clients-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.clients-table th {
+  background-color: #A993EC;
+  color: #fff;
+  text-align: left;
+  padding: 14px 10px;
+  font-weight: 600;
+  border-bottom: 2px solid #8e78d0;
+}
+
+.clients-table td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  transition: background 0.3s ease;
+}
+
+.clients-table tr:hover {
+  background-color: #f3f0fc;
+}

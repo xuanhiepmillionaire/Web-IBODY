@@ -5,11 +5,13 @@ Reset
     box-sizing: border-box;
   }
   
-  body {
+   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background-color: #f8f9fa;
     color: #333;
+    background-color: var(--light-gray);
+    color: var(--text-dark);
   }
   
   /* Header */
@@ -190,8 +192,6 @@ Reset
     }
   }
   
-
-
     /* Auth Container */
     .modal-overlay {
         display: none;
@@ -482,13 +482,21 @@ Reset
 }
 /* Màu chủ đạo */
 :root {
-  --primary-color: #A78BFA;
+  /* --primary-color: #A78BFA;
   --primary-hover: #8B5CF6;
   --white: #FFFFFF;
   --light-gray: #F9FAFB;
   --text-dark: #1F2937;
   --text-darker: #111827;
-  --text-medium: #6B7280;
+  --text-medium: #6B7280; */
+  --primary-color: #A993EC;
+  --primary-hover: #7A63E3;
+  --white: #FFFFFF;
+  --light-gray: #F4F1FF;  
+  --text-dark: #3A2C60; 
+  --text-darker: #2B2060; 
+  --text-medium: #7D72B8;
+  --highlight-light: #C3B4F9;
   --yellow: #FBBF24;
   --green: #34D399;
 }
@@ -830,7 +838,7 @@ img {
 
 .intro-box {
   background-color: var(--white);
-  border: 2px solid #ffcc99;
+  border: 2px solid #A993EC;
   padding: 1.5rem 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -848,8 +856,10 @@ img {
 
 /* Footer */
 .custom-footer {
-  background-color: #1F2937;
-  color: #E5E7EB;
+  /* background-color: #1F2937;
+  color: #E5E7EB; */
+  background-color: var(--text-darker);
+  color: var(--white);
   padding: 3rem 1.5rem 2rem;
   margin-top: 3rem;
   margin-left: 220px;
@@ -877,7 +887,8 @@ img {
 
 .footer-about h4,
 .footer-contact h4 {
-  color: #A78BFA; /* tím nhẹ */
+  /* color: #A78BFA; */
+  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
@@ -890,10 +901,10 @@ img {
 .footer-bottom {
   margin-top: 2rem;
   text-align: center;
-  border-top: 1px solid #374151;
+  border-top: 1px solid #444;
   padding-top: 1rem;
   font-size: 0.85rem;
-  color: #9CA3AF; /* xám nhẹ hơn */
+  color: #ccc; /* xám nhẹ hơn */
 }
 
 
@@ -964,3 +975,35 @@ img {
   max-height: 80px;
   object-fit: contain;
 }
+
+
+/* ---- */
+.community-invite {
+    font-family: 'Segoe UI', sans-serif;
+    /* font-size: 18px; */
+    font-weight: 500;
+    color: #333;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .community-invite a {
+    color: #A993EC;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  .community-invite a:hover {
+    color: #7f65d4;
+    transform: translateY(-2px);
+  }
+
+  .community-invite i {
+    font-size: 16px;
+  }

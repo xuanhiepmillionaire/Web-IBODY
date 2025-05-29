@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("ngayTao").innerText = new Date(data.ngayTao).toLocaleDateString();
     document.getElementById("trangThai").innerText = data.trangThai;
   } catch (err) {
-    alert("❌ Lỗi: " + err.message);
+    alert("Lỗi: " + err.message);
   }
 });
 document.getElementById("toggleSidebarBtn").onclick = () => {

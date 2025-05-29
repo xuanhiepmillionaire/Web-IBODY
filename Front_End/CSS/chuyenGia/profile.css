@@ -207,6 +207,40 @@ body {
 }
 
 /* Ảnh chứng chỉ */
+#viewCertBtn {
+    background-color: #A993EC;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  #viewCertBtn i {
+    font-size: 16px;
+  }
+
+  #viewCertBtn:hover {
+    background-color: #9277e0;
+    transform: translateY(-2px);
+  }
+
+  #viewCertBtn:active {
+    transform: scale(0.98);
+  }
+
+  p {
+    font-size: 16px;
+    color: #333;
+    font-family: "Segoe UI", sans-serif;
+  }
+
+/* Ảnh chứng chỉ */
 #cgCertImage {
   max-width: 100%;
   max-height: 250px;
@@ -233,6 +267,77 @@ button#editProfileBtn {
 button#editProfileBtn:hover {
   background-color: #8b74da;
 }
+
+/* Lịch rãnh */
+
+#scheduleForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    background-color: #f9f7ff;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 100%;
+  }
+
+  #scheduleForm label {
+    font-weight: 500;
+    color: #333;
+  }
+
+  #scheduleForm select,
+  #scheduleForm input[type="time"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    min-width: 120px;
+    transition: border 0.2s ease;
+  }
+
+  #scheduleForm select:focus,
+  #scheduleForm input[type="time"]:focus {
+    border-color: #A993EC;
+    outline: none;
+  }
+
+  .add-slot-btn {
+    background-color: #A993EC;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .add-slot-btn:hover {
+    background-color: #9277e0;
+    transform: translateY(-2px);
+  }
+
+  .add-slot-btn:active {
+    transform: scale(0.98);
+  }
+
+  .add-slot-btn i {
+    font-size: 14px;
+  }
+
+  .add-slot-btn.cancel {
+    background-color: #dc3545;
+  }
+
+  .add-slot-btn.cancel:hover {
+    background-color: #c82333;
+  }
 
 /* Bảng phải: Quản lý lịch rảnh */
 .right-panel {

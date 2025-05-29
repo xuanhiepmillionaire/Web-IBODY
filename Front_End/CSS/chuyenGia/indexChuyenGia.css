@@ -19,7 +19,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
+    border-bottom: 1px solid #d5cef0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -30,13 +31,15 @@
     font-weight: bold;
     display: flex;
     align-items: center;
-    color: #222;
+    /* color: #222; */
+    color: #4b3e7a;
   }
   
   .logo .symbol {
     font-size: 1.8rem;
     margin-right: 0.5rem;
-    color: #ff69b4;
+    /* color: #ff69b4; */
+    color: #A993EC;
   }
   
   .nav {
@@ -46,19 +49,20 @@
   
   .nav a {
     text-decoration: none;
-    color: #333;
+    color: #4b3e7a;
     font-weight: 500;
     transition: color 0.3s;
   }
   
   .nav a:hover,
   .nav a.active {
-    color: #ff69b4;
+    color: #A993EC;
   }
   
   /* Hero Section */
   .hero {
-    background: linear-gradient(120deg, #ffe6f0, #e6f0ff);
+    /* background: linear-gradient(120deg, #ffe6f0, #e6f0ff); */
+    background: var(--light-gray);
     padding: 4rem 2rem 5rem;
     text-align: center;
     position: relative;
@@ -83,29 +87,32 @@
   
   .text-box h1 {
     font-size: 2.5rem;
-    color: #222;
+    /* color: #222; */
+    color: #4b3e7a;
     margin-bottom: 1rem;
   }
   
   .highlight-pink {
-    color: #ff69b4;
+    /* color: #ff69b4; */
+  color: #A993EC;
     font-weight: bold;
   }
   
   .highlight-blue {
-    color: #007bff;
+    /* color: #007bff; */
+  color: #A993EC;
     font-weight: bold;
   }
   
   .text-box p {
     font-size: 1.1rem;
-    color: #444;
+    color: #555;
     margin-bottom: 1.5rem;
   }
   
   .text-box button {
     padding: 0.75rem 1.5rem;
-    background-color: #ff69b4;
+    background-color: #A993EC;
     color: white;
     border: none;
     border-radius: 30px;
@@ -115,7 +122,7 @@
   }
   
   .text-box button:hover {
-    background-color: #e055a0;
+    background-color: #8d79d0;;
   }
   
   /* Badge */
@@ -123,12 +130,12 @@
     margin-top: 2rem;
     font-weight: bold;
     font-size: 1.2rem;
-    color: #007bff;
+    color: #A993EC;
   }
   
   /* Footer */
   .footer {
-    background-color: #49423f;
+  background-color: #4b3e7a;
     color: #f1f1f1;
     padding: 2rem 2rem 1rem;
     margin-top: 3rem;
@@ -150,7 +157,7 @@
   
   .footer-about h3,
   .footer-contact h4 {
-    color: #ff69b4;
+    color: #A993EC;
     margin-bottom: 1rem;
   }
   
@@ -163,36 +170,11 @@
   .footer-bottom {
     text-align: center;
     margin-top: 1.5rem;
-    border-top: 1px solid #444;
+    border-top: 1px solid #6e5db1;
     padding-top: 1rem;
     font-size: 0.85rem;
   }
   
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .nav {
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-  
-    .text-box h1 {
-      font-size: 2rem;
-    }
-  
-    .icon-left,
-    .icon-right {
-      width: 60px;
-      height: 60px;
-    }
-  }
-  
-
-
     /* Auth Container */
     .modal-overlay {
         display: none;
@@ -249,13 +231,13 @@
         font-weight: bold;
         border: none;
         border-radius: 10px;
-        background-color: #f1f1f1;
+        background-color: #eee;
         cursor: pointer;
         transition: background-color 0.3s;
       }
       
       .form-toggle button.active {
-        background-color: #ff69b4;
+        background-color: #A993EC;
         color: white;
       }
       
@@ -285,12 +267,12 @@
       
       .form input:focus {
         outline: none;
-        border-color: #ff69b4;
+        border-color: #A993EC;
         box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.2);
       }
       
       .form button {
-        background-color: #ff69b4;
+        background-color: #A993EC;
         color: white;
         border: none;
         padding: 0.8rem;
@@ -301,7 +283,7 @@
       }
       
       .form button:hover {
-        background-color: #e055a0;
+        background-color: #8d79d0;
       }
       
       /* Quên mật khẩu */
@@ -310,7 +292,7 @@
         font-size: 0.9rem;
         margin-top: -10px;
         margin-bottom: 15px;
-        color: #007bff;
+        color: #A993EC;
         text-decoration: none;
       }
       
@@ -330,7 +312,7 @@
       .core-values h2 {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
-        color: #333;
+        color: #4b3e7a;
       }
       
       .core-card {
@@ -338,7 +320,7 @@
         margin: 0 auto;
         padding: 1.5rem;
         border-radius: 16px;
-        border: 2px solid #ffb6c1;
+        border: 2px solid #A993EC;
         background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(255,240,245,0.6));
         box-shadow: 0 6px 12px rgba(0,0,0,0.05);
         font-size: 1rem;
@@ -352,15 +334,12 @@
       }
       
       .core-card strong {
-        color: #ff69b4;
+        color: #A993EC;
       }
-      
-
-
 
       .features-section {
         padding: 4rem 1rem 3rem;
-        background-color: #fafafa;
+        background-color: #f7f4ff;
         text-align: center;
       }
       
@@ -368,7 +347,7 @@
         font-size: 1.7rem;
         font-weight: 700;
         margin-bottom: 1.5rem;
-        color: #222;
+        color: #4b3e7a;
         line-height: 1.4;
       }
       
@@ -376,7 +355,7 @@
         max-width: 600px;
         margin: 0 auto;
         background-color: #fff;
-        border: 2px solid #ffcc99;
+        border: 2px solid #bba5f3;
         border-radius: 16px;
         padding: 1.5rem;
         box-shadow: 0 8px 20px rgba(0,0,0,0.05);
@@ -391,14 +370,10 @@
       }
       
       .features-box strong {
-        color: #ff6600;
+        color: #A993EC;
       }
       
-
-
-/* User Menu */
-      
-
+      /* User Menu */
       .user-menu {
         position: relative;
         display: inline-block;
@@ -433,8 +408,33 @@
         color: #333;
       }
       .user-dropdown a:hover {
-        background-color: #f0f0f0;
+        /* background-color: #f0f0f0; */
+        background-color: #f3f0fb;
+        color: #A993EC;
       }
       .user-dropdown.show {
         display: block;
       }
+
+        /* Responsive */
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  
+    .text-box h1 {
+      font-size: 2rem;
+    }
+  
+    .icon-left,
+    .icon-right {
+      width: 60px;
+      height: 60px;
+    }
+  }
