@@ -7028,11 +7028,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Uni\\DoAn\\IBODY\\IBODY\\Back_End\\IBODY_WebAPI\\IBODY_WebAPI.csproj",
+      "projectUniqueName": "D:\\Uni\\DoAn\\Final\\IBODY\\Back_End\\IBODY_WebAPI\\IBODY_WebAPI.csproj",
       "projectName": "IBODY_WebAPI",
-      "projectPath": "D:\\Uni\\DoAn\\IBODY\\IBODY\\Back_End\\IBODY_WebAPI\\IBODY_WebAPI.csproj",
+      "projectPath": "D:\\Uni\\DoAn\\Final\\IBODY\\Back_End\\IBODY_WebAPI\\IBODY_WebAPI.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\Uni\\DoAn\\IBODY\\IBODY\\Back_End\\IBODY_WebAPI\\obj\\",
+      "outputPath": "D:\\Uni\\DoAn\\Final\\IBODY\\Back_End\\IBODY_WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config"
